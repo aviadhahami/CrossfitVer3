@@ -36,10 +36,11 @@ font-family:Dense;
     position: relative;
     z-index: -999;
     width: 100%;
+    -webkit-filter: sepia(70%);
 }
 .overlayText {
     margin-top: -22%;
-    background-color: rgba(204, 153, 51, 0.2);
+    background-color: rgba(204, 153, 51, 0.4);
 }
 h1#title {
     color: white;
