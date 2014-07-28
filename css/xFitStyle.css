@@ -1,0 +1,63 @@
+/** FONT ISNTALLATION**/
+
+@font-face{
+
+font-family:Dense;
+ src:url(file:///C:/Users/aviadh/Documents/Websites/crossfit/CrossfitVer3/fonts/Dense-Regular.otf);
+
+}
+.header {
+    height: 1%;
+    margin-top: 2%;
+    background: #1A1A1A;
+}
+.logopic {
+    margin: -2%;
+    width: 35%;
+    height: auto;
+    float: right;
+}
+.nav-bar {
+    margin-top: 20%;
+    height: 100%;
+    color: #ffffff;
+}
+.carImg {
+    margin-top: -17%;
+    position: relative;
+    z-index: -999;
+    width: 100%;
+}
+.overlayText {
+    margin-top: -22%;
+    background-color: rgba(204, 153, 51, 0.2);
+}
+h1#title {
+    color: white;
+    font-family: Dense;
+    font-weight: bold;
+    text-shadow: 0px 1px 2px rgba(204, 153, 51, 0.4);
+    font-size: 6vw;
+    padding: 0;
+    margin: 0;
+}
+h2#title {
+    margin-top: -2%;
+    color: white;
+    font-family: Dense;
+    font-size: 5vw;
+}
+button#overlay {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    font-family: Dense;
+    font-size: 2vw;
+    margin: 0;
+    margin-top: -10%;
+    margin-bottom: -10%;
+}
+.foot {
+    margin-top: 4%;
+}
+@media only screen and (max-width: 480px) {}

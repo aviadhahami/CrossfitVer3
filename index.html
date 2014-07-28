@@ -2,7 +2,9 @@
 <html>
 
 <head>
-    <title>try</title>
+    <title>Some Title</title>
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <script src="js/myScripts.js"></script>
 
     <!-- Responsive and mobile friendly stuff -->
     <meta name="HandheldFriendly" content="True">
@@ -10,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Stylesheets -->
-
+    <link rel="stylesheet" href="css/xFitStyle.css" media="all">
     <link rel="stylesheet" href="css/html5reset.css" media="all">
     <link rel="stylesheet" href="css/responsivegridsystem.css" media="all">
     <link rel="stylesheet" href="css/col.css" media="all">
@@ -26,6 +28,8 @@
     <link rel="stylesheet" href="css/11cols.css" media="all">
     <link rel="stylesheet" href="css/12cols.css" media="all">
 
+
+
     <!-- Responsive Stylesheets -->
     <link rel="stylesheet" media="only screen and (max-width: 1024px) and (min-width: 769px)" href="/css/1024.css">
     <link rel="stylesheet" media="only screen and (max-width: 768px) and (min-width: 481px)" href="/css/768.css">
@@ -36,33 +40,59 @@
 
     <body>
         <div id="container">
-            <div class="header section group span_3_of_3" style="background:pink;">
-                <div class="logo col span_1_of_3" style="background:green;">
-                    111
+            <div class="header group span_3_of_3">
+                <div class="logo col span_1_of_3">
+                    <a href="index.html">
+                        <img src="img/logo_white.png" class="logopic" />
+                    </a>
                 </div>
-                <div class="nav-bar col span_2_of_3" style="background:blue;">
-                    NAV BAR
+                <div class="nav-bar col span_2_of_3">
+                    NAV BAR GOES HERE
                 </div>
             </div>
+
             <div class="span_3_of_3">
-                Carousel
+                <div class="carousel">
+                    <img alt="pic 1" class="carImg" src="img/headerPhoto1.png" />
+                </div>
+                <div class="overlayText">
+                    <h1 id="title">Fuck your Ori !</h1>
+                    <h2 id="title">This is version #2 of this website</h2>
+                    <button id="overlay" onclick='alert("clicked");'>FIND OUT NOW</button>
+                    <br>
+                    <br>
+                    <br>
+                </div>
             </div>
+            <div class="foot">
+                <div class="section">
+                    <div class="col span_1_of_4">
+                        <img src="img/boxLink1.png" />
+                        <p class="introtext">Title1</p>
+                        <p>I hate you Ori</p>
+                    </div>
+                    <div class="col span_1_of_4">
+                        <img src="img/boxLink2.png" />
+                        <p class="introtext">Title2</p>
+                        <p>I hate you Ori</p>
+                    </div>
+                    <div class="col span_1_of_4">
+                        <img src="img/boxLink3.png" />
+                        <p class="introtext">Title3</p>
+                        <p>I hate you Ori</p>
+                    </div>
+                    <div class="col span_1_of_4">
+                        <img src="img/boxLink4.png" />
+                        <p class="introtext">Title4</p>
+                        <p>I hate you Ori</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
-
     </body>
-    <!-- JavaScript at the bottom for fast page loading -->
-
-    <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
-    <script>
-        window.jQuery || document.write('<script src="js/jquery-1.7.2.min.js"><\/script>')
-    </script>
-
-    <!--[if (lt IE 9) & (!IEMobile)]>
-	<script src="js/selectivizr-min.js"></script>
-	<![endif]-->
 
 
-    <!-- More Scripts-->
     <script src="js/responsivegridsystem.js"></script>
 
 </html>
