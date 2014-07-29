@@ -9,13 +9,17 @@ font-family:Dense;
 body {
     overflow: hidden;
 }
+.container {
+    margin-top: -5%;
+}
 .header {
     height: 1%;
-    margin-top: 2%;
+    margin-top: 8%;
     background: #1A1A1A;
 }
 .logopic {
     margin: -2%;
+    margin-top: -10%;
     width: 35%;
     height: auto;
     float: right;
@@ -81,12 +85,4 @@ button#overlay {
 .foot {
     margin-top: 4%;
 }
-.footImg {
-    background-size: cover;
-    width: 100px;
-    height: 100px;
-    border-radius: 100px;
-    border-top-left-radius: 100px;
-    border-bottom-right-radius: 100px;
-}
-@media only screen and (max-width: 480px) {}
+.footImg {}@media only screen and (max-width: 480px) {}
