@@ -6,14 +6,16 @@ font-family:Dense;
  src:url(file:///C:/Users/aviadh/Documents/Websites/crossfit/CrossfitVer3/fonts/Dense-Regular.otf);
 
 }
+body {
+    overflow: hidden;
+}
 .header {
     height: 1%;
-    margin-top: 8%;
+    margin-top: 2%;
     background: #1A1A1A;
 }
 .logopic {
     margin: -2%;
-    margin-top: -10%;
     width: 35%;
     height: auto;
     float: right;
@@ -33,11 +35,19 @@ font-family:Dense;
 **/
 
 .carImg {
+    background-image: url(http://xn--gebzbbce.co.il/images/ajax_load.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 10%;
     margin-top: -17%;
     position: relative;
     z-index: -999;
     width: 100%;
     -webkit-filter: sepia(70%);
+    -moz-filter: sepia(70%);
+    -ms-filter: sepia(70%);
+    -o-filter: sepia(70%);
+    filter: sepia(70%);
 }
 .overlayText {
     margin-top: -22%;
@@ -71,4 +81,12 @@ button#overlay {
 .foot {
     margin-top: 4%;
 }
-.footImg {}@media only screen and (max-width: 480px) {}
+.footImg {
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    border-top-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+}
+@media only screen and (max-width: 480px) {}
