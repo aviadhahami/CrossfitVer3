@@ -20,7 +20,6 @@ body {
     float: right;
 }
 .nav-bar {
-    margin-top: 20%;
     height: 100%;
     color: #ffffff;
 }
@@ -51,54 +50,50 @@ body {
 .overlayText {
     margin-top: -28%;
     margin-bottom: 16%;
-    background-color: rgba(204, 153, 51, 0.4);   
-    
+    background-color: rgba(204, 153, 51, 0.4);
 }
 .buttontext {
-  font-size: 14px;
-color: white;
-  -moz-transform: scale(0.99, 1);
-  -webkit-transform: scale(0.99, 1);
-  -ms-transform: scale(0.99, 1);
+    font-size: 14px;
+    color: white;
+    -moz-transform: scale(0.99, 1);
+    -webkit-transform: scale(0.99, 1);
+    -ms-transform: scale(0.99, 1);
 }
 h1#title {
-letter-spacing:2px;
- text-align: center;
-  font-size: 60px;
-  font-family: "Impact";
-  color: white;
-  text-shadow: 1.5px 2.598px 1px rgba( 0, 0, 0, 0.15);
-  -moz-transform: matrix( 1.09002048828558,0,0,1.10103079624806,0,0);
-  -webkit-transform: matrix( 1.09002048828558,0,0,1.10103079624806,0,0);
-  -ms-transform: matrix( 1.09002048828558,0,0,1.10103079624806,0,0);
-
-
-}
-h2#title { 
+    letter-spacing: 2px;
     text-align: center;
-   margin-top: -15px;
+    font-size: 60px;
+    font-family: "Impact";
+    color: white;
+    text-shadow: 1.5px 2.598px 1px rgba(0, 0, 0, 0.15);
+    -moz-transform: matrix(1.09002048828558, 0, 0, 1.10103079624806, 0, 0);
+    -webkit-transform: matrix(1.09002048828558, 0, 0, 1.10103079624806, 0, 0);
+    -ms-transform: matrix(1.09002048828558, 0, 0, 1.10103079624806, 0, 0);
+}
+h2#title {
+    text-align: center;
+    margin-top: -15px;
     margin-bottom: 50px;
-  font-size: 32.697px;
-  font-family: "Myriad Hebrew";
-  color: white;
-  text-shadow: 1px 1.732px 1px rgba( 0, 0, 0, 0.15);
-  -moz-transform: matrix( 1.09002048828558,0,0,1.10103079624806,0,0);
-  -webkit-transform: matrix( 1.09002048828558,0,0,1.10103079624806,0,0);
-  -ms-transform: matrix( 1.09002048828558,0,0,1.10103079624806,0,0)
+    font-size: 32.697px;
+    font-family: "Myriad Hebrew";
+    color: white;
+    text-shadow: 1px 1.732px 1px rgba(0, 0, 0, 0.15);
+    -moz-transform: matrix(1.09002048828558, 0, 0, 1.10103079624806, 0, 0);
+    -webkit-transform: matrix(1.09002048828558, 0, 0, 1.10103079624806, 0, 0);
+    -ms-transform: matrix(1.09002048828558, 0, 0, 1.10103079624806, 0, 0)
 }
 button#overlay {
     margin-top: -5%;
-    margin-bottom: -5%;  
-  border-style: solid;
-  border-width: 4px;
+    margin-bottom: -5%;
+    border-style: solid;
+    border-width: 4px;
     border-color: white;
-  background-color: rgba( 0, 0, 0, 0 );
-
-  box-shadow: 0px 0px 10px 10px rgba( 0, 0, 0, 0.02 );
-  width: 16%;
-  height: 7%;
- width: 208px;
-  height: 41px;
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.02);
+    width: 16%;
+    height: 7%;
+    width: 208px;
+    height: 41px;
 }
 .foot {
     position: relative;
@@ -109,41 +104,32 @@ button#overlay {
     border-radius: 100%;
     border-top-left-radius: 100%;
     border-bottom-right-radius: 100%;
-  
 }
-
 .blogs {
-    clear:both;
+    clear: both;
     padding: 0px;
     width: 80%;
-    margin: 0 auto;  
+    margin: 0 auto;
 }
 /** custom grid with margins **/
 
-
 .span_1_of_4_cus {
-   width: calc(180px + 7%)
+    width: calc(180px + 7%)
 }
-.col_cus{
-	display: inline-block;
-	margin: 1% 0 1% 1.6%;
+.col_cus {
+    display: inline-block;
+    margin: 1% 0 1% 1.6%;
 }
-.col_cus:first-child{
- margin-left: 0;   
+.col_cus:first-child {
+    margin-left: 0;
 }
-
 span.introtext2 {
-  font-weight: bold;
+    font-weight: bold;
 }
-
 p.blogsubtext {
-  font-size: 14px;
-  margin-top: 0.5em;
-  font-family: "Open Sans Hebrew";
-  text-align: center;
-
+    font-size: 14px;
+    margin-top: 0.5em;
+    font-family: "Open Sans Hebrew";
+    text-align: center;
 }
-
-@media only screen and (max-width: 480px) {
-
-}
+@media only screen and (max-width: 480px) {}
