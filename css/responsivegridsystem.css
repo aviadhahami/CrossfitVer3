@@ -152,14 +152,13 @@ hyphens : auto;  }
 
 
 p.introtext {
-font-family:  MuseoSlab100, 'lucida sans unicode', 'lucida grande', 'Trebuchet MS', verdana, arial, helvetica, helve, sans-serif;
+
 font-size : 2.5em; /* 40 / 16 */
 color: #333;
 line-height: 1.4em;
 letter-spacing: -1px;
 margin-bottom: 0.5em;
 }
-
 
 p.handwritten {
 font-family:  HandSean, 'lucida sans unicode', 'lucida grande', 'Trebuchet MS', verdana, arial, helvetica, helve, sans-serif; 

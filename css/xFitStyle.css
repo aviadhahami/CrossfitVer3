@@ -3,20 +3,19 @@
 @font-face{
 
 font-family:Dense;
- src:url(file:///C:/Users/aviadh/Documents/Websites/crossfit/CrossfitVer3/fonts/Dense-Regular.otf);
+ src:url(Dense-Regular.otf);
 
 }
 body {
     overflow: hidden;
 }
 .header {
-    height: 1%;
-    margin-top: 2%;
+    height: 76px;
+    margin-top: 0%;
     background: #1A1A1A;
 }
 .logopic {
-    margin: -2%;
-    width: 35%;
+    margin-top: -15px;
     height: auto;
     float: right;
 }
@@ -25,15 +24,21 @@ body {
     height: 100%;
     color: #ffffff;
 }
+/**
 .carousel {
-    margin-top: -5%;
+    width: 500%;
+    left: 0;
+    margin: 0 auto;
+    padding: 0;
 }
+**/
+
 .carImg {
     background-image: url(http://xn--gebzbbce.co.il/images/ajax_load.gif);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 10%;
-    margin-top: -17%;
+    margin-top: -10%;
     position: relative;
     z-index: -999;
     width: 100%;
@@ -44,43 +49,101 @@ body {
     filter: sepia(70%);
 }
 .overlayText {
-    margin-top: -22%;
-    background-color: rgba(204, 153, 51, 0.4);
+    margin-top: -28%;
+    margin-bottom: 16%;
+    background-color: rgba(204, 153, 51, 0.4);   
+    
+}
+.buttontext {
+  font-size: 14px;
+color: white;
+  -moz-transform: scale(0.99, 1);
+  -webkit-transform: scale(0.99, 1);
+  -ms-transform: scale(0.99, 1);
 }
 h1#title {
-    color: white;
-    font-family: Dense;
-    font-weight: bold;
-    text-shadow: 0px 1px 2px rgba(204, 153, 51, 0.4);
-    font-size: 6vw;
-    padding: 0;
-    margin: 0;
+letter-spacing:2px;
+ text-align: center;
+  font-size: 60px;
+  font-family: "Impact";
+  color: white;
+  text-shadow: 1.5px 2.598px 1px rgba( 0, 0, 0, 0.15);
+  -moz-transform: matrix( 1.09002048828558,0,0,1.10103079624806,0,0);
+  -webkit-transform: matrix( 1.09002048828558,0,0,1.10103079624806,0,0);
+  -ms-transform: matrix( 1.09002048828558,0,0,1.10103079624806,0,0);
+
+
 }
-h2#title {
-    margin-top: -2%;
-    color: white;
-    font-family: Dense;
-    font-size: 5vw;
+h2#title { 
+    text-align: center;
+   margin-top: -15px;
+    margin-bottom: 50px;
+  font-size: 32.697px;
+  font-family: "Myriad Hebrew";
+  color: white;
+  text-shadow: 1px 1.732px 1px rgba( 0, 0, 0, 0.15);
+  -moz-transform: matrix( 1.09002048828558,0,0,1.10103079624806,0,0);
+  -webkit-transform: matrix( 1.09002048828558,0,0,1.10103079624806,0,0);
+  -ms-transform: matrix( 1.09002048828558,0,0,1.10103079624806,0,0)
 }
 button#overlay {
-    background: transparent;
-    color: white;
-    border: 2px solid white;
-    font-family: Dense;
-    font-size: 2vw;
-    margin: 0;
-    margin-top: -10%;
-    margin-bottom: -10%;
+    margin-top: -5%;
+    margin-bottom: -5%;  
+  border-style: solid;
+  border-width: 4px;
+    border-color: white;
+  background-color: rgba( 0, 0, 0, 0 );
+
+  box-shadow: 0px 0px 10px 10px rgba( 0, 0, 0, 0.02 );
+  width: 16%;
+  height: 7%;
+ width: 208px;
+  height: 41px;
 }
 .foot {
-    margin-top: 4%;
+    position: relative;
 }
 .footImg {
-    background-size: cover;
-    width: 100px;
-    height: 100px;
-    border-radius: 100px;
-    border-top-left-radius: 100px;
-    border-bottom-right-radius: 100px;
+    width: 130px;
+    height: 130px;
+    border-radius: 100%;
+    border-top-left-radius: 100%;
+    border-bottom-right-radius: 100%;
+  
 }
-@media only screen and (max-width: 480px) {}
+
+.blogs {
+    clear:both;
+    padding: 0px;
+    width: 80%;
+    margin: 0 auto;  
+}
+/** custom grid with margins **/
+
+
+.span_1_of_4_cus {
+   width: calc(180px + 7%)
+}
+.col_cus{
+	display: inline-block;
+	margin: 1% 0 1% 1.6%;
+}
+.col_cus:first-child{
+ margin-left: 0;   
+}
+
+span.introtext2 {
+  font-weight: bold;
+}
+
+p.blogsubtext {
+  font-size: 14px;
+  margin-top: 0.5em;
+  font-family: "Open Sans Hebrew";
+  text-align: center;
+
+}
+
+@media only screen and (max-width: 480px) {
+
+}
