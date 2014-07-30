@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <body>
-    <? $term=mysql_real_escape_string($_GET[ "page"]); echo "<script>alert(123);</script>";?>
+    <? $term=mysql_real_escape_string($_GET[ "page"]); if($term=='' ){ $term="empty get" ;} echo "<script>alert('" . $term. "');</script>"; ?>
     <? /* <section class="main-post eleven columns row">
     <?php while (have_posts()) : the_post() ?>
     <h1 class="entry-title"><a href="<?php the_permalink(); ?>"
@@ -33,14 +33,14 @@
     <div class="foot">
         <div class="section">
             <div class="col_cus span_1_of_4_cus">
-                <img style='background-image:url(<?php bloginfo(' template_url '); ?>/img/mpic1.jpg);' class="footImg" />
+                <img style="background-image:url(<?php bloginfo('template_url'); ?>/img/mpic1.jpg);" class="footImg" />
                 <br>
                 <p class="blogsubtext">
                     <span class="introtext2">בין השירים הישראלים הבודדים</span>
                     <br>שאני ישראלי שאתה אוהב?</p>
             </div>
             <div class="col_cus span_1_of_4_cus">
-                <img style="background-image:url(<?php bloginfo(' template_url '); ?>/img/mpic2.jpg);" class="footImg" />
+                <img style="background-image:url(<?php bloginfo('template_url'); ?>/img/mpic2.jpg);" class="footImg" />
 
                 <p class="blogsubtext">
                     <span class="introtext2">בין השירים הישראלים הבודדים</span>
