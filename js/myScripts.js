@@ -17,9 +17,20 @@ $(document).ready(function () {
 
         var finalStr = $('#carImg').attr("src").substring(0, $('#carImg').attr("src").length - 5) + i + ".png";
 
-        $('#carImg').fadeOut(500, function () {
+        /** $('#carImg').fadeOut(500, function () {
             $('#carImg').attr('src', finalStr);
             $('#carImg').fadeIn(500);
+        });**/
+
+
+        $('#carImg').animate({
+            opacity: 0
+        }, 500, function () {
+            $('#carImg').attr('src', finalStr);
+            $('#carImg').animate({
+                opacity: 1
+            }, 500);
+
         });
 
     }, 30000);

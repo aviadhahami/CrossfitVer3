@@ -43,7 +43,12 @@
                 </a>
             </div>
             <div class="nav-bar col span_2_of_3">
-                NAV BAR GOES HERE
+                <?
+                $url = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URl'];               
+                echo '<script>alert("' . $url . '");</script>';?>
+                <a href="<?
+                $url = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URl'];?>" >Blog</a>
+                
             </div>
         </div>
 
