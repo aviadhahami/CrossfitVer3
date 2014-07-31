@@ -29,7 +29,7 @@ body {
     display: inline;
 }
 .main-nav a {
-    padding: 0 20px 0 20px;
+    padding: 0 4% 0 4%;
     text-decoration: none;
     line-height: 50px;
     color: rgba(131, 129, 128, 0.7);
@@ -37,15 +37,16 @@ body {
 .main-nav a:hover {
     color: white;
 }
-/**
-.carousel {
-    width: 500%;
-    left: 0;
-    margin: 0 auto;
+.main-nav ul ul {
+    position: absolute;
+    visibility: hidden;
+    border-top: 1px solid #fff;
+    margin: 0;
     padding: 0;
 }
-**/
-
+.main-nav ul li:hover > ul {
+    position: absolute;
+}
 .carImg {
     background-image: url(http://xn--gebzbbce.co.il/images/ajax_load.gif);
     background-repeat: no-repeat;
