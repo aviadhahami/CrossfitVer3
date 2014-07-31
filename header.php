@@ -38,17 +38,14 @@
     <div class="container group">
         <div class="header group span_3_of_3">
             <div class="logo col span_1_of_3">
-                <a href="index.html">
+                <a href="<?php echo get_option('home'); ?>">
                     <img src="<?php bloginfo('template_url'); ?>/img/logo_white.png" class="logopic" alt="logo" />
                 </a>
             </div>
             <div class="nav-bar col span_2_of_3">
-                <?
-                $url = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URl'];               
-                echo '<script>alert("' . $url . '");</script>';?>
-                <a href="<?
-                $url = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URl'];?>" >Blog</a>
-                
+                <div class="main-nav">
+                    <? wp_nav_menu(array( 'container_class'=>'main-nav', 'container' => 'nav-bar')); ?>
+                </div>
             </div>
         </div>
 
@@ -63,9 +60,8 @@
             </div>
             <div class="nav-container">
                 <nav class="nav-bar">
-                    <?php /**wp_nav_menu(array( 'container_class'=>'main-nav', 'container' => 'nav')); ?>
-                    <a href="<?php echo get_option('home'); ?>"><img class="logopic" src="<?php bloginfo('template_url'); ?>/img/logo_white.png"
-                                                                         title="<?php bloginfo('title'); **/ ?>"></a>
+
+                             title="<?php bloginfo('title'); ?>"></a>
                 </nav>
             </div>
         </header>
