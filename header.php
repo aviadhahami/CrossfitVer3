@@ -36,20 +36,23 @@
 <body>
 
     <div class="container group">
-        <div class="header group span_3_of_3">
-            <div class="logo col span_1_of_3">
+        <div class="header group span_4_of_4">
+            <div class="logo header_blocks span_1_of_4_cus">
                 <a href="<?php echo get_option('home'); ?>">
                     <img src="<?php bloginfo('template_url'); ?>/img/logo_white.png" class="logopic" alt="logo" />
                 </a>
             </div>
-            <div class="nav-bar col span_2_of_3">
+            <div class="nav-bar header_blocks span_1_of_4_cus">
+                    EMPTYSPACE
+                </div>
+             <div class="nav-bar header_blocks span_2_of_4_cus">
                 <div class="main-nav">
                     <? wp_nav_menu(array( 'container_class'=>'main-nav', 'container' => 'nav-bar')); ?>
                 </div>
             </div>
         </div>
 
-
+        
         <!-- <div class="container">
         <header>
             <div class="main-nav" id="show-nav">

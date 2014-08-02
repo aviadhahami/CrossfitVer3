@@ -44,6 +44,9 @@
 
         <h2>אימוני עבר <hr class="style-one" /></h2>
         <br/>
+
+    
+    
     
         <p>
             <input type="hidden" name="GreetingAll" id="GreetingAll" value="Hello Everyone!" />
@@ -52,9 +55,25 @@
             </div>
         </p>
 
-
+        <ul id='PaginationExample'>
+            <li>
+                <?php next_post( '% &raquo; &raquo; ', '', 'yes'); ?>
+            </li>
+            <li>
+                <?php previous_post( '&laquo; &laquo; %', '', 'yes'); ?>|
+            </li>
+        </ul>
+        <div id='mycontent'>
+            <div id='contentInner'>
+                All the Posts & navigations are located here
+            </div>
+        </div>
     </div>
 </div>
+
+
+
+
 <div class="col span_2_of_3" style="margin:0;">
     <h1 id="blogTitle">
         <?php the_title(); ?>
@@ -72,8 +91,8 @@
 
 
 
-<?php previous_post( '&laquo; &laquo; %', '', 'yes'); ?>|
-<?php next_post( '% &raquo; &raquo; ', '', 'yes'); ?>
+
+
 
 <?php break; ?>
 <?php endwhile; ?>
