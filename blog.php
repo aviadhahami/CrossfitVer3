@@ -7,52 +7,18 @@
 <div class="col span_1_of_3 ">
     <div class="span_2_of_3 signup">
         <h2>הרשמה לאימונים <hr class="style-one" /></h2>
-        <table id="formTable">
-            <tr>
-                <td>
-                    <input type="text" value="" id="name" />
-                </td>
-                <td>
-                    <label class="formLabel">שם</label>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="text" value="" id="phone" />
-                </td>
-                <td>
-                    <label class="formLabel">טלפון</label>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="text" value="" id="mail" />
-                </td>
-                <td>
-                    <label class="formLabel">אימייל</label>
-                </td>
-                <tr>
-                    <td>
-                        <button id="viewPartButton" onclick="alert('U CLICKED ME');">משתתפים</button>
-
-                        <button id="signButton" onclick="alert('U CLICKED ME');">הרשם לאימון</button>
-                    </td>
-                </tr>
-            </tr>
-        </table>
-
-
+        <input type="text" value="" id="name">שם
+        <br />
+        <input type="text" value="" id="phone">טלפון
+        <br />
+        <input type="text" value="" id="mail">אימייל
+        <br />
+        <button id="viewPartButton" onclick="alert('U CLICKED ME');">משתתפים</button>
+        <button id="signButton" onclick="alert('U CLICKED ME');">הרשם לאימון</button>
+        <br />
+        <br />
         <h2>אימוני עבר <hr class="style-one" /></h2>
-        <br/>
-    
-        <p>
-            <input type="hidden" name="GreetingAll" id="GreetingAll" value="Hello Everyone!" />
-            <input type="submit" id="PleasePushMe" />
-            <div id="test-div1">
-            </div>
-        </p>
-
-
+        NEED TO BE IMPLEMENTED
     </div>
 </div>
 <div class="col span_2_of_3" style="margin:0;">
