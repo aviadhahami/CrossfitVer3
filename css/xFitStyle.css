@@ -13,6 +13,7 @@ body {
     height: 76px;
     margin-top: 0%;
     background: #1A1A1A;
+    position: absolute;
 }
 .logopic {
     margin-top: -15px;
@@ -125,6 +126,52 @@ button#overlay {
     padding: 0px;
     width: 80%;
     margin: 0 auto;
+}
+.blogHeader {
+    margin-top: -2%;
+    height: auto;
+    width: 100%;
+}
+h1#blogHeadTitle {
+    color: white;
+    margin-top: -15%;
+    padding-bottom: 6%;
+}
+h1#blogTitle {
+    float: none;
+}
+hr.style-one {
+    margin: 0;
+    border: 0;
+    height: 1px;
+    background: #333;
+    float: initial;
+    background-image: -webkit-linear-gradient(left, #ccc, #333, #ccc);
+    background-image: -moz-linear-gradient(left, #ccc, #333, #ccc);
+    background-image: -ms-linear-gradient(left, #ccc, #333, #ccc);
+    background-image: -o-linear-gradient(left, #ccc, #333, #ccc);
+}
+.blogData img {
+    width: 80%;
+    max-height: 45%;
+}
+.signup input {
+    margin: 4%;
+}
+.signup {
+    float: right;
+}
+button#viewPartButton {
+    border: 1px solid black;
+    color: black;
+    text-shadow: none;
+    background-color: white;
+}
+button#signButton {
+    border: 1px solid #3FC78C;
+    color: white;
+    text-shadow: none;
+    background-color: #3FC78C;
 }
 /** custom grid with margins **/
 
