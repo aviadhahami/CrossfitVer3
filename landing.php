@@ -1,9 +1,5 @@
- 
-<?
-if (isset($the_post())){
-    echo '<script>alert("yes");';
-}
-?>
+
+
 <div class="carousel">
         <img alt="pic 1" id="carImg" class="carImg" src="<?php bloginfo('template_url'); ?>/img/headerPhoto1.png" />
     </div>
