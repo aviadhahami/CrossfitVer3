@@ -19,6 +19,7 @@
         <br />
         <h2>אימוני עבר <hr class="style-one" /></h2>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <br/>
 
     
@@ -44,6 +45,9 @@
                 All the Posts & navigations are located here
             </div>
         </div>
+=======
+        NEED TO BE IMPLEMENTED
+>>>>>>> parent of 880f217... implemented primate AJAX call
 =======
         NEED TO BE IMPLEMENTED
 >>>>>>> parent of 880f217... implemented primate AJAX call
