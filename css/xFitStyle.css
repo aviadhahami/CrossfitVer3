@@ -208,16 +208,11 @@ hr.style-one {
     background-image: -o-linear-gradient(left, #ccc, #333, #ccc);
 }
 .blogData img {
-    width: auto;
+    width: 80%;
     max-height: 45%;
 }
 .signup input {
     margin: 4%;
-    display: inline-block;
-    border: 1px solid black;
-    border-radius: 0;
-    box-shadow: none;
-    width: 75%;
 }
 .signup {
     float: right;
@@ -233,12 +228,6 @@ button#signButton {
     color: white;
     text-shadow: none;
     background-color: #3FC78C;
-}
-label.formLabel {
-    display: inline-block;
-}
-table#formTable {
-    text-align: inherit;
 }
 /** custom grid with margins **/
 
