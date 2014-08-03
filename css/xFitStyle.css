@@ -40,13 +40,20 @@ body {
 }
 .main-nav ul ul {
     position: absolute;
-    visibility: hidden;
-    border-top: 1px solid #fff;
+    display: none;
+    top: 100%;
     margin: 0;
     padding: 0;
+    background: #1A1A1A;
+    color: rgba(131, 129, 128, 0.7);
+    display: inherit;
+    float: none;
+    width:5%;
 }
-.main-nav ul li:hover > ul {
-    position: absolute;
+.main-nav ul ul li {
+    position: relative;
+    float: none;
+    margin: 0;
 }
 .carImg {
     background-image: url(http://xn--gebzbbce.co.il/images/ajax_load.gif);
@@ -157,6 +164,10 @@ hr.style-one {
 }
 .signup input {
     margin: 4%;
+    width: 75%;
+    box-shadow: none;
+    border: 1px solid black;
+    border-radius: 0px;
 }
 .signup {
     float: right;

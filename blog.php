@@ -7,16 +7,42 @@
 <div class="col span_1_of_3 ">
     <div class="span_2_of_3 signup">
         <h2>הרשמה לאימונים <hr class="style-one" /></h2>
-        <input type="text" value="" id="name">שם
-        <br />
-        <input type="text" value="" id="phone">טלפון
-        <br />
-        <input type="text" value="" id="mail">אימייל
-        <br />
-        <button id="viewPartButton" onclick="alert('U CLICKED ME');">משתתפים</button>
-        <button id="signButton" onclick="alert('U CLICKED ME');">הרשם לאימון</button>
-        <br />
-        <br />
+
+        <table>
+            <tr>
+                <td>
+                    <input type="text" value="" id="name">
+                </td>
+
+                <td>
+                    <label>שם</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" value="" id="phone">
+                </td>
+                <td>
+                    <label>טלפון</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" value="" id="mail">
+                </td>
+                <td>
+                    <label>אימייל</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="viewPartButton" onclick="alert('U CLICKED ME');">משתתפים</button>
+                    <button id="signButton" onclick="alert('U CLICKED ME');">הרשם לאימון</button>
+                </td>
+            </tr>
+        </table>
+
+
         <h2>אימוני עבר <hr class="style-one" /></h2>
         NEED TO BE IMPLEMENTED
     </div>
