@@ -1,21 +1,7 @@
 <?php get_header(); ?>
 
 <body>
-    <? 
-    $term=mysql_real_escape_string($_GET[ "page"]);
-    //if($term=='' ){ $term="empty get" ;} echo "<script>alert('" . $term. "');</script>";
-    try{ 
-        if($term == "blog"){
-            require_once "blog.php";
-        }else if($term == "about"){
-            require_once "about.php";
-        }else if($term == "about" || $term == ""){
-            require_once "landing.php";
-        }
-    }  catch (Exception $e){
-        
-        echo '<h1>Some error happened, please refresh</h1>';
-    }?>
+    <? $term=mysql_real_escape_string($_GET[ "page"]); //if($term=='' ){ $term="empty get" ;} echo "<script>alert('" . $term. "');</script>"; try{ if($term=="blog" ){ require_once "blog.php"; }else if($term=="about" ){ require_once "about.php"; }else if($term=="about" || $term=="" ){ require_once "landing.php"; } } catch (Exception $e){ echo '<h1>Some error happened, please refresh</h1>'; }?>
     <? /* <section class="main-post eleven columns row">
     <?php while (have_posts()) : the_post() ?>
     <h1 class="entry-title"><a href="<?php the_permalink(); ?>"
@@ -31,6 +17,6 @@
     </section>
 
     */ ?>
- 
+
     <?php //get_sidebar(); ?>
-    <?php //get_footer(); ?>
+    <?php get_footer(); ?>
