@@ -20,33 +20,29 @@
             </tr>
             <tr>
                 <td>
-                    <input type="text" value="" id="phone">
+                    <select id="poll">
+
+                    </select>
                 </td>
                 <td>
-                    <label>טלפון</label>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="text" value="" id="mail">
-                </td>
-                <td>
-                    <label>אימייל</label>
+                    <label>בחר אימון</label>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <button id="viewPartButton" onclick="alert('U CLICKED ME');">משתתפים</button>
-                    <button id="signButton" onclick="alert('U CLICKED ME');">הרשם לאימון</button>
+                    <button id="viewPartButton" onclick="alert('vire parts');">משתתפים</button>
+                    <button id="signButton">הרשם לאימון</button>
                 </td>
             </tr>
         </table>
 
 
         <h2>אימוני עבר <hr class="style-one" /></h2>
-        NEED TO BE IMPLEMENTED
+        NEED TO BE IMPLEMENTED 232
     </div>
 </div>
+
+
 <div class="col span_2_of_3" style="margin:0;">
     <h1 id="blogTitle">
         <?php the_title(); ?>
