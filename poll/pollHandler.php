@@ -2,7 +2,7 @@
 
 $selection = $_GET["selection"];
 $clientName = $_GET["name"];
-
+$rawSelect = $_GET["rawSelect"];
 
 date_default_timezone_set("Israel");
 $dateNumber = date("dmy");
@@ -17,6 +17,7 @@ if (file_exists("pollData/" . $dateNumber . "-Wod.xml")) {
     $newParticipant = $xml->addChild('participant');
     $newParticipant->addChild('name', $clientName);
     $newParticipant->addChild('wod', $selection);
+    $newParticipant->addChild('rawData', $rawSelect);
 
     $xml->asXML($file);
 } else {
@@ -34,10 +35,14 @@ if (file_exists("pollData/" . $dateNumber . "-Wod.xml")) {
     $wodText = $xml->createTextNode("$selection");
     $wod->appendChild($wodText);
 
+    $raw = $xml->createElement("rawData");
+    $rawText = $xml->createTextNode("$rawSelect");
+    $raw->appendChild($rawText);
 
     $participant = $xml->createElement("participant");
     $participant->appendChild($name);
     $participant->appendChild($wod);
+    $participant->appendChild($raw);
 
     $root->appendChild($participant);
 
