@@ -44,7 +44,7 @@ $(document).ready(function() {
     );
 
 
-    //submit button handler
+    //submit button listener
     $('#signButton').click(function() {
         submitWork();
     });
@@ -60,7 +60,21 @@ $(document).ready(function() {
             document.cookie = "xFitVoted=1; " + expires;
 
             //this part sends to the server the chosen option from the SELECT
-            //TODO: IMPLEMENT
+            var selection = $('#poll').val();
+            alert(selection);
+            $.ajax({
+                //URL MIGHT NEED TO BE CHANGED ! 
+                type: "GET",
+                url: "../poll/pollHandler.php",
+                data: 'selection=' + selection,
+                datatype: "html",
+                success: function(result) {
+                    alert(result);
+                    alert("Success");
+                }
+            });
+
+
         } else {
             //user voted
             alert("We're sorry, but you've already voted");
