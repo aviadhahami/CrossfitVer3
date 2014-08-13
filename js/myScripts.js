@@ -45,7 +45,9 @@ $(document).ready(function() {
 
 
     //submit button handler
-    $('#signButton').click(submitWork());
+    $('#signButton').click(function() {
+        submitWork();
+    });
 
     function submitWork() {
         //checking if voted or not
