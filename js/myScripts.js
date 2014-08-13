@@ -62,14 +62,18 @@ $(document).ready(function() {
             //this part sends to the server the chosen option from the SELECT
             var selection = $('#poll').val();
             alert(selection);
+            var name = $('#name').val();
+            alert($('#name').val());
+            alert($('#name').text());
+            
             $.ajax({
                 //URL MIGHT NEED TO BE CHANGED ! 
                 type: "GET",
                 url: "../poll/pollHandler.php",
-                data: 'selection=' + selection,
+                data: 'selection=' + selection + "&name=" + name,
                 datatype: "html",
                 success: function(result) {
-                    alert(result);
+                    console.log(result);
                     alert("Success");
                 }
             });

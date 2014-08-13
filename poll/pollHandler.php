@@ -1,4 +1,5 @@
 <? 
+    $name=$_GET[ "name" ];
     $selection=$_GET[ "selection"]; 
    // echo $selection;
 
@@ -18,24 +19,24 @@ $xml = new DOMDocument("1.0");
 $root = $xml->createElement("data");
 $xml->appendChild($root);
 
-$id   = $xml->createElement("id");
-$idText = $xml->createTextNode('1');
-$id->appendChild($idText);
+$name   = $xml->createElement("name");
+$nameText = $xml->createTextNode("$name");
+$name->appendChild($nameText);
 
-$title   = $xml->createElement("title");
-$titleText = $xml->createTextNode('"PHP Undercover"');
-$title->appendChild($titleText);
+$wod   = $xml->createElement("wod");
+$wodText = $xml->createTextNode("$selection");
+$wod->appendChild($wodText);
 
 
-$book = $xml->createElement("book");
-$book->appendChild($id);
-$book->appendChild($title);
+$participant = $xml->createElement("participant");
+$participant->appendChild($name);
+$participant->appendChild($wod);
 
-$root->appendChild($book);
+$root->appendChild($participant);
 
 $xml->formatOutput = true;
 echo "<xmp>". $xml->saveXML() ."</xmp>";
 
-$xml->save("mybooks.xml") or die("Error");
+$xml->save("myWod.xml") or die("Error");
 
 ?>
