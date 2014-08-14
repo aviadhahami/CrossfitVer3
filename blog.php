@@ -11,7 +11,7 @@
         <table>
             <tr>
                 <td>
-                    <input type="text" value="" id="name">
+                    <input type="text" id="name">
                 </td>
 
                 <td>
