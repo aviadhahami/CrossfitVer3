@@ -34,3 +34,12 @@ Icon
 # Files that might appear on external disk
 .Spotlight-V100
 .Trashes
+
+.idea/.name
+.idea/CrossfitVer3.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/encodings.xml
+.idea/scopes/scope_settings.xml
+.idea/vcs.xml
+.idea/workspace.xml
