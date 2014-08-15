@@ -9,11 +9,18 @@ $dateNumber = date("dmy");
 
 if (file_exists("pollData/" . $dateNumber . "-Wod.xml")) {
     echo("XML exists, adding new records...");
+    //Load the XML
     $file = "pollData/" . $dateNumber . "-Wod.xml";
     $xml = simplexml_load_file($file);
-
-    //$data = $xml->data;
-
+    //Let's check if already signed, if so --> DELETE IT !
+    $XMLParticipants = $xml->xpath('/data/participant');
+    foreach ($XMLParticipants as $XMLParticipant) {
+        if ($XMLParticipant->name == $clientName) {
+            echo "Found him $clientName !<br />";
+            $node = dom_import_simplexml($XMLParticipant);
+            $node->parentNode->removeChild($node);
+        }
+    }
     $newParticipant = $xml->addChild('participant');
     $newParticipant->addChild('name', $clientName);
     $newParticipant->addChild('wod', $selection);

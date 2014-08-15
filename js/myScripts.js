@@ -69,12 +69,11 @@ $(document).ready(function () {
         var name = $('#name').val();
         if (name == "" || name == " ") {
             //no name given
-            console.log("starting the node creation");
-            var para = document.createElement("p");
-            var node = document.createTextNode("please enter a name");
-            para.appendChild(node);
-            var element = document.getElementById("name").parentNode;
-            element.appendChild(para);
+            console.log("no input");
+            $('#noInput').fadeIn("slow");
+            setTimeout(function () {
+                $('#noInput').fadeOut("slow");
+            }, 10000);
         } else {
 
             $.ajax({
@@ -89,12 +88,32 @@ $(document).ready(function () {
                 datatype: "html",
                 success: function (result) {
                     console.log(result);
-                    alert("Success");
-                    showPoll();
+                    var element = document.getElementById("signButton").parentNode;
+                    var para = document.createElement("p");
+                    para.setAttribute("class", "success");
+                    var node = document.createTextNode("Thank you" + name + "! You've signed up for " + rawSelect);
+                    para.appendChild(node);
+                    element.appendChild(para);
+                    //document.getElementById("success").fadeOut("slow").delay(2000);
+                    //$('p', element)[0].fadeOut("slow").delay(2000);
+                    setTimeout(function () {
+                        $(".success").fadeOut("slow");
+                    }, 10000);
+
+                },
+                error: function (result) {
+                    alert("something went wrong, please try again later.");
+                    console.error(result);
                 }
+
+
             });
         }
 
+    }
+
+    function showPoll() {
+        console.log("show poll");
     }
 
     //regulat regex-based getCookie func
