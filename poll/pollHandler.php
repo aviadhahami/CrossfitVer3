@@ -8,7 +8,7 @@ date_default_timezone_set("Israel");
 $dateNumber = date("dmy");
 
 if (file_exists("pollData/" . $dateNumber . "-Wod.xml")) {
-    echo("FILE IS THERE");
+    echo("XML exists, adding new records...");
     $file = "pollData/" . $dateNumber . "-Wod.xml";
     $xml = simplexml_load_file($file);
 
@@ -21,7 +21,7 @@ if (file_exists("pollData/" . $dateNumber . "-Wod.xml")) {
 
     $xml->asXML($file);
 } else {
-    echo("FILE NOT THERE");
+    echo("XML didn't exist. Generating XML and adding new records...");
     $xml = new DOMDocument("1.0");
 
     $root = $xml->createElement("data");
