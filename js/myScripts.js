@@ -62,15 +62,20 @@ $(document).ready(function() {
             //this part sends to the server the chosen option from the SELECT
             var selection = $('#poll').val();
             alert(selection);
+            var rawSelect = $("#poll option:selected").text();
+            alert(rawSelect);
             var name = $('#name').val();
-            alert($('#name').val());
-            alert($('#name').text());
-            
+            alert(name);
+
             $.ajax({
                 //URL MIGHT NEED TO BE CHANGED ! 
                 type: "GET",
                 url: "../poll/pollHandler.php",
-                data: 'selection=' + selection + "&name=" + name,
+                data: {
+                    selection: selection,
+                    name: name,
+                    rawSelect: rawSelect
+                },
                 datatype: "html",
                 success: function(result) {
                     console.log(result);
