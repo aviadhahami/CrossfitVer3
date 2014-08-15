@@ -7,6 +7,8 @@
                 <h1 id="blogHeadTitle"> ABOUT US </h1>
             </div>
         </div>
+
+
         <div class="content">
             <div class="blogger">
                 <div class="col_side left_span"></div>
@@ -14,6 +16,8 @@
                 <div class="col_side right_span">
                     <div class="superheader">
                         Main page
+
+
                     </div>
                 </div>
             </div>
@@ -77,13 +81,16 @@
 
 
                 <div class="col_side right_span">
+
                     <h2>הרשמה לאימונים
                         <hr class="style-one"/>
                     </h2>
 
+
                     <div class="col_side span_2_of_2">
 
                         <div class="generalText">
+
                             <br>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
                             ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
