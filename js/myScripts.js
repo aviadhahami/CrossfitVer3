@@ -1,10 +1,10 @@
 "use strict";
-$(document).ready(function() {
+$(document).ready(function () {
     console.log("JQ LOADED");
 
 
     // fakeCarousel();
-    setInterval(function() {
+    setInterval(function () {
         var i = $('#carImg').attr("src").charAt($('#carImg').attr("src").length - 5);
         var index = parseInt(i);
         if (index === 5) {
@@ -19,7 +19,7 @@ $(document).ready(function() {
 
         $('#carImg').animate({
             opacity: 0
-        }, 500, function() {
+        }, 500, function () {
             $('#carImg').attr('src', finalStr);
             $('#carImg').animate({
                 opacity: 1
@@ -32,12 +32,12 @@ $(document).ready(function() {
 
     //nav-bar hover submenu display
     $('.main-nav ul li').hover(
-        function() {
+        function () {
             //show its submenu  
             $('ul:first', this).css('display', 'block');
             console.log("hovered");
         },
-        function() {
+        function () {
             //hide its submenu  
             $('ul:first', this).css('display', 'none');
         }
@@ -45,30 +45,40 @@ $(document).ready(function() {
 
 
     //submit button listener
-    $('#signButton').click(function() {
+    $('#signButton').click(function () {
         submitWork();
     });
 
     function submitWork() {
-        //checking if voted or not
-        var voted = getCookie("xFitVoted");
-        if (voted === "" || voted == null) {
+
+        /**
+         //checking if voted or not
+         var voted = getCookie("xFitVoted");
+         if (voted === "" || voted == null) {
             //user didnt vote
             var now = new Date();
             var expireDate = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59, 999);
             var expires = "expires=" + expireDate;
             document.cookie = "xFitVoted=1; " + expires;
+        }
+         */
 
-            //this part sends to the server the chosen option from the SELECT
-            var selection = $('#poll').val();
-            alert(selection);
-            var rawSelect = $("#poll option:selected").text();
-            alert(rawSelect);
-            var name = $('#name').val();
-            alert(name);
+        //this part sends to the server the chosen option from the SELECT
+        var selection = $('#poll').val();
+        var rawSelect = $("#poll option:selected").text();
+        var name = $('#name').val();
+        if (name == "" || name == " ") {
+            //no name given
+            console.log("starting the node creation");
+            var para = document.createElement("p");
+            var node = document.createTextNode("please enter a name");
+            para.appendChild(node);
+            var element = document.getElementById("name").parentNode;
+            element.appendChild(para);
+        } else {
 
             $.ajax({
-                //URL MIGHT NEED TO BE CHANGED ! 
+                //URL MIGHT NEED TO BE CHANGED !
                 type: "GET",
                 url: "../poll/pollHandler.php",
                 data: {
@@ -77,19 +87,16 @@ $(document).ready(function() {
                     rawSelect: rawSelect
                 },
                 datatype: "html",
-                success: function(result) {
+                success: function (result) {
                     console.log(result);
                     alert("Success");
+                    showPoll();
                 }
             });
-
-
-        } else {
-            //user voted
-            alert("We're sorry, but you've already voted");
         }
 
     }
+
     //regulat regex-based getCookie func
     function getCookie(name) {
         var re = new RegExp(name + "=([^;]+)");
@@ -98,11 +105,8 @@ $(document).ready(function() {
     }
 
 
-
-
-
     //SELECT options script
-    $.urlParam = function(name, url) {
+    $.urlParam = function (name, url) {
         if (!url) {
             url = window.location.href;
         }
@@ -122,40 +126,40 @@ $(document).ready(function() {
     function insertSelectOptions(day) {
         switch (day) {
             case 1:
-                {
-                    appendSun();
-                    break;
-                }
+            {
+                appendSun();
+                break;
+            }
             case 2:
-                {
-                    appendMon();
-                    break;
-                }
+            {
+                appendMon();
+                break;
+            }
             case 3:
-                {
-                    appendTue();
-                    break;
-                }
+            {
+                appendTue();
+                break;
+            }
             case 4:
-                {
-                    appendWed();
-                    break;
-                }
+            {
+                appendWed();
+                break;
+            }
             case 5:
-                {
-                    appendThu();
-                    break;
-                }
+            {
+                appendThu();
+                break;
+            }
             case 6:
-                {
-                    appendFri();
-                    break;
-                }
+            {
+                appendFri();
+                break;
+            }
             case 7:
-                {
-                    appendSat();
-                    break;
-                }
+            {
+                appendSat();
+                break;
+            }
 
 
         }

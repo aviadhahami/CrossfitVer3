@@ -21,6 +21,7 @@ if (file_exists("pollData/" . $dateNumber . "-Wod.xml")) {
 
     $xml->asXML($file);
 } else {
+    /** The following part generates a full XML file including headers*/
     echo("XML didn't exist. Generating XML and adding new records...");
     $xml = new DOMDocument("1.0");
 
@@ -52,7 +53,7 @@ if (file_exists("pollData/" . $dateNumber . "-Wod.xml")) {
     $xml->save("pollData/" . $dateNumber . "-Wod.xml") or die("Error");
 
 }
-/** The following part generates a full XML file including headers*/
+
 
 
 ?>
