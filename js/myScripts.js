@@ -147,10 +147,10 @@ $(document).ready(function () {
             datatype: "xml",
             success: function (xml) {
                 console.log(xml);
-                //TODO : Generate bar for each option
                 $("#results p").remove();
                 $("#poll option").each(function () {
                     var optionRawData = $(this).text();
+                    var optionCode = $(this).val();
                     $("#results").append("<p>" + $(this).text() + "</p>");
                     var counter = 0;
                     var totalPart = 0;
@@ -163,8 +163,13 @@ $(document).ready(function () {
                         }
 
                     });
+
                     var percentage = (counter / totalPart) * 100;
                     $("#results").append("<p>" + counter + " which is " + (percentage | 0) + "% of the total participants today</p>");
+                    $("#results").append("<div id='" + optionCode + "' style='width: 300px;height:20px; border: 1px solid #ddd;border-radius: 5px; overflow: hidden; display:inline-block;margin:0px 10px 5px 5px;vertical-align:top;'></div>");
+                    $("#" + optionCode).append("<div id='" + optionCode + "Child' style='color: #fff;text-align: right;height: 25px;width: 0;background-color: #0ba1b5;border-radius: 3px; '></div>");
+                    var progressBarWidth = percentage * $("#" + optionCode).width() / 100;
+                    $("#" + optionCode + "Child").width(progressBarWidth).html((percentage | 0) + "% ");
                 });
 
             },

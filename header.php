@@ -3,9 +3,10 @@
 
 <head>
     <title>
-        <?php wp_title( '|', true, 'right'); bloginfo( 'name'); ?>
+        <?php wp_title('|', true, 'right');
+        bloginfo('name'); ?>
     </title>
-    <?php wp_enqueue_script( "jquery"); ?>
+    <?php wp_enqueue_script("jquery"); ?>
     <!-- <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/style.css">  -->
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/css/2cols.css">
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/css/3cols.css">
@@ -35,22 +36,22 @@
 
 <body>
 
-    <div class="container group">
-        <div class="header group span_3_of_3">
-            <div class="logo col span_1_of_3">
-                <a href="<?php echo get_option('home'); ?>">
-                    <img src="<?php bloginfo('template_url'); ?>/img/logo_white.png" class="logopic" alt="logo" />
-                </a>
-            </div>
-            <div class="nav-bar col span_2_of_3">
-                <div class="main-nav">
-                    <? wp_nav_menu(array( 'container_class'=>'main-nav', 'container' => 'nav-bar')); ?>
-                </div>
+<div class="container group">
+    <div class="header group span_3_of_3">
+        <div class="logo col span_1_of_3">
+            <a href="<?php echo get_option('home'); ?>">
+                <img src="<?php bloginfo('template_url'); ?>/img/logo_white.png" class="logopic" alt="logo"/>
+            </a>
+        </div>
+        <div class="nav-bar col span_2_of_3">
+            <div class="main-nav">
+                <? wp_nav_menu(array('container_class' => 'main-nav', 'container' => 'nav-bar')); ?>
             </div>
         </div>
+    </div>
 
 
-        <!-- <div class="container">
+    <!-- <div class="container">
         <header>
             <div class="main-nav" id="show-nav">
                 <a href="#">Toggle Navigation</a>
