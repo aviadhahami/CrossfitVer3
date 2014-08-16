@@ -3,7 +3,11 @@
 $selection = $_GET["selection"];
 $clientName = $_GET["name"];
 $rawSelect = $_GET["rawSelect"];
-
+if ($selection == "" || $clientName == "" || $rawSelect == "") {
+    //If incoming GET is empty with all 3 attributes then shut it down
+    echo("You shouldn't address this page directly. GTFO.");
+    exit();
+}
 date_default_timezone_set("Israel");
 $dateNumber = date("dmy");
 

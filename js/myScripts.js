@@ -48,6 +48,13 @@ $(document).ready(function () {
     $('#signButton').click(function () {
         submitWork();
     });
+    $('#viewPartButton').click(function () {
+        showPoll();
+    });
+    $('.signup').on('click', '#showSignUp', function () {
+        //General event listener for newly appended child
+        showSignUp();
+    });
 
     function submitWork() {
 
@@ -91,7 +98,8 @@ $(document).ready(function () {
                     var element = document.getElementById("signButton").parentNode;
                     var para = document.createElement("p");
                     para.setAttribute("class", "success");
-                    var node = document.createTextNode("Thank you" + name + "! You've signed up for " + rawSelect);
+                    para.setAttribute("style", "border: 1px solid black;");
+                    var node = document.createTextNode("Thank you " + name + "! You've signed up for " + rawSelect);
                     para.appendChild(node);
                     element.appendChild(para);
                     //document.getElementById("success").fadeOut("slow").delay(2000);
@@ -114,6 +122,66 @@ $(document).ready(function () {
 
     function showPoll() {
         console.log("show poll");
+        $(".signup table").css("display", "none");
+        $(".signup").append("<div id='results'></div>")
+        $("#results").append("<p>Loading please wait...</p>");
+        $("#results").append("<button id='showSignUp'>Back</button>");
+
+        //Ajax call to XML file
+        var d = new Date();
+
+        var month = d.getMonth() + 1;
+        var day = d.getDate();
+
+        var dateOutput = (('' + day).length < 2 ? '0' : '') + day +
+            (('' + month).length < 2 ? '0' : '') + month + (d.getFullYear() % 100);
+
+
+        //Generating URL string with the current file to date
+        var url = "../poll/pollData/" + dateOutput + "-Wod.xml";
+
+        $.ajax({
+            //URL MIGHT NEED TO BE CHANGED !
+            type: "GET",
+            url: url,
+            datatype: "xml",
+            success: function (xml) {
+                console.log(xml);
+                //TODO : Generate bar for each option
+                $("#results p").remove();
+                $("#poll option").each(function () {
+                    var optionRawData = $(this).text();
+                    $("#results").append("<p>" + $(this).text() + "</p>");
+                    var counter = 0;
+                    var totalPart = 0;
+                    $(xml).find('participant').each(function () {
+                        var xmlName = $(this).find('name').text();
+                        var xmlRawData = $(this).find('rawData').text();
+                        totalPart++;
+                        if (xmlRawData == optionRawData) {
+                            counter++;
+                        }
+
+                    });
+                    var percentage = (counter / totalPart) * 100;
+                    $("#results").append("<p>" + counter + " which is " + (percentage | 0) + "% of the total participants today</p>");
+                });
+
+            },
+            error: function (result) {
+                alert("something went wrong, please try again later.");
+                console.error(result);
+            }
+
+
+        });
+
+    }
+
+    function showSignUp() {
+        console.log("showing signup");
+        $("#results").remove();
+        $(".signup table").css("display", "block");
     }
 
     //regulat regex-based getCookie func
@@ -398,6 +466,6 @@ $(document).ready(function () {
                 .text("20:30 WOD"));
     }
 
-    //DONE WITH THE OPTIONS INJETIONS
+    //DONE WITH THE OPTIONS INJECTIONS
 
 });

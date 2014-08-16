@@ -38,7 +38,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <button id="viewPartButton" onclick="alert('vire parts');">משתתפים</button>
+                        <button id="viewPartButton">משתתפים</button>
                         <button id="signButton">הרשם לאימון</button>
                     </td>
                 </tr>
@@ -48,7 +48,7 @@
             <h2>אימוני עבר
                 <hr class="style-one"/>
             </h2>
-            NEED TO BE IMPLEMENTED 232
+            <p>NEED TO BE IMPLEMENTED </p>
         </div>
     </div>
 
