@@ -30,7 +30,7 @@ $(document).ready(function () {
     }, 30000);
 
 
-    //nav-bar hover submenu display
+  /*  //nav-bar hover submenu display
     $('.main-nav ul li').hover(
         function () {
             //show its submenu  
@@ -41,7 +41,7 @@ $(document).ready(function () {
             //hide its submenu  
             $('ul:first', this).css('display', 'none');
         }
-    );
+    );*/
 
 
     //submit button listener
@@ -55,6 +55,12 @@ $(document).ready(function () {
         //General event listener for newly appended child
         showSignUp();
     });
+    
+    //Get previous post click listener
+    $('#goBack').click(function(){
+        alert("u wanna go back?");
+    });
+    $('#goBack').css('cursor', 'pointer');
 
     function submitWork() {
 
