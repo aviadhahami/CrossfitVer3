@@ -1,5 +1,7 @@
 <?php
 if ($_POST) {
+    //$to_email = "gali@crossfitherzliya.com";
+    
     $to_email = "aviadhahami@gmail.com";
     //Sanitize input data using PHP filter_var().
     $user_name = filter_var($_POST["userName"], FILTER_SANITIZE_STRING);
@@ -18,10 +20,10 @@ if ($_POST) {
     $send_mail = mail($to_email, $subject, $message_body, $headers);
     if (!$send_mail) {
         //If mail couldn't be sent output error. Check your PHP email configuration (if it ever happens)
-        $output = "Oops something went wrong";
+        $output = "0";
         die($output);
     } else {
-        $output = "Worked !";
+        $output = "1";
         die($output);
     }
 }

@@ -1,10 +1,10 @@
 "use strict";
-$(document).ready(function () {
+$(document).ready(function() {
     console.log("JQ LOADED");
 
 
     // fakeCarousel();
-    setInterval(function () {
+    setInterval(function() {
         var i = $('#carImg').attr("src").charAt($('#carImg').attr("src").length - 5);
         var index = parseInt(i);
         if (index === 5) {
@@ -19,7 +19,7 @@ $(document).ready(function () {
 
         $('#carImg').animate({
             opacity: 0
-        }, 500, function () {
+        }, 500, function() {
             $('#carImg').attr('src', finalStr);
             $('#carImg').animate({
                 opacity: 1
@@ -30,26 +30,28 @@ $(document).ready(function () {
     }, 30000);
 
     //submit button listener
-    $('#signButton').click(function () {
+    $('#signButton').click(function() {
         submitWork();
     });
-    $('#viewPartButton').click(function () {
+    $('#viewPartButton').click(function() {
         showPoll();
     });
-    $('.signup').on('click', '#showSignUp', function () {
+    $('.signup').on('click', '#showSignUp', function() {
         //General event listener for newly appended child
         showSignUp();
     });
-    $("#submitForm").click(function () {
+    $("#submitForm").click(function() {
         submitForm();
     });
 
 
     //Get previous post click listener
-    $('#goBack').click(function () {
+    $('#goBack').click(function() {
         alert("u wanna go back?");
     });
     $('#goBack').css('cursor', 'pointer');
+
+
 
     /* Form Handeling Script*/
     function submitForm() {
@@ -57,31 +59,61 @@ $(document).ready(function () {
         var contactName = $("#contactName").val();
         var contactMail = $("#contactEmail").val();
         var contactText = $("#contactTextarea").val();
-        var post_data = {'userName': contactName, 'userMail': contactMail, 'userText': contactText};
+        if (contactName.length < 5 || contactName == "" || contactName == " ") {
+            $("#contactName").css("border-color", "red");
+            $("#nameLabel").append("<p id='error'>Please enter a valid name</p>");
+            $("#nameLabel > p").delay(5000).fadeOut(500);
+            //$("#error").html("");
+            return;
+        } else {
+            $("#contactName").css("border-color", "green");
+        }
+        if (contactMail.length < 5 || contactMail == "" || contactMail == " ") {
+            $("#contactEmail").css("border-color", "red");
+            $("#emailLabel").append("<p id='error'>Please enter a valid mail</p>");
+            $("#emailLabel > p").delay(5000).fadeOut(500);
+            //$("#error").html("");
+            return;
+        } else {
+            $("#contactEmail").css("border-color", "green");
+        }
+        if (contactText.length < 5 || contactText == "" || contactText == " ") {
+            $("#contactTextarea").css("border-color", "red");
+            $("#messageLabel").append("<p id='error'>Please enter a valid text</p>");
+            $("#messageLabel > p").delay(5000).fadeOut(500);
+            //$("#error").html("");
+            return;
+        } else {
+            $("#contactTextarea").css("border-color", "green");
+        }
+
+
+
+
+        var post_data = {
+            'userName': contactName,
+            'userMail': contactMail,
+            'userText': contactText
+        };
         //now we send to the server
         console.log("Sending mail with the following attr " + contactName + " " + contactMail + " " + contactText);
 
-        $.post('../mail/mailHandler.php', post_data, function (response) {
+        $.post('../mail/mailHandler.php', post_data, function(response) {
 
-            console.log("responded with: " + response);
-           
+            if (response === "1") {
+                //we're good
+                console.log(response);
+            } else {
+                //we're not good
+                console.error(response);
+            }
+
         });
     }
 
 
     function submitWork() {
 
-        /**
-         //checking if voted or not
-         var voted = getCookie("xFitVoted");
-         if (voted === "" || voted == null) {
-            //user didnt vote
-            var now = new Date();
-            var expireDate = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59, 999);
-            var expires = "expires=" + expireDate;
-            document.cookie = "xFitVoted=1; " + expires;
-        }
-         */
 
         //this part sends to the server the chosen option from the SELECT
         var selection = $('#poll').val();
@@ -91,7 +123,7 @@ $(document).ready(function () {
             //no name given
             console.log("no input");
             $('#noInput').fadeIn("slow");
-            setTimeout(function () {
+            setTimeout(function() {
                 $('#noInput').fadeOut("slow");
             }, 10000);
         } else {
@@ -106,7 +138,7 @@ $(document).ready(function () {
                     rawSelect: rawSelect
                 },
                 datatype: "html",
-                success: function (result) {
+                success: function(result) {
                     console.log(result);
                     var element = document.getElementById("signButton").parentNode;
                     var para = document.createElement("p");
@@ -117,12 +149,12 @@ $(document).ready(function () {
                     element.appendChild(para);
                     //document.getElementById("success").fadeOut("slow").delay(2000);
                     //$('p', element)[0].fadeOut("slow").delay(2000);
-                    setTimeout(function () {
+                    setTimeout(function() {
                         $(".success").fadeOut("slow");
                     }, 10000);
 
                 },
-                error: function (result) {
+                error: function(result) {
                     alert("something went wrong, please try again later.");
                     console.error(result);
                 }
@@ -158,16 +190,16 @@ $(document).ready(function () {
             type: "GET",
             url: url,
             datatype: "xml",
-            success: function (xml) {
+            success: function(xml) {
                 console.log(xml);
                 $("#results p").remove();
-                $("#poll option").each(function () {
+                $("#poll option").each(function() {
                     var optionRawData = $(this).text();
                     var optionCode = $(this).val();
                     $("#results").append("<p>" + $(this).text() + "</p>");
                     var counter = 0;
                     var totalPart = 0;
-                    $(xml).find('participant').each(function () {
+                    $(xml).find('participant').each(function() {
                         var xmlName = $(this).find('name').text();
                         var xmlRawData = $(this).find('rawData').text();
                         totalPart++;
@@ -186,7 +218,7 @@ $(document).ready(function () {
                 });
 
             },
-            error: function (result) {
+            error: function(result) {
                 alert("something went wrong, please try again later.");
                 console.error(result);
             }
@@ -211,7 +243,7 @@ $(document).ready(function () {
 
 
     //SELECT options script
-    $.urlParam = function (name, url) {
+    $.urlParam = function(name, url) {
         if (!url) {
             url = window.location.href;
         }
@@ -231,40 +263,40 @@ $(document).ready(function () {
     function insertSelectOptions(day) {
         switch (day) {
             case 1:
-            {
-                appendSun();
-                break;
-            }
+                {
+                    appendSun();
+                    break;
+                }
             case 2:
-            {
-                appendMon();
-                break;
-            }
+                {
+                    appendMon();
+                    break;
+                }
             case 3:
-            {
-                appendTue();
-                break;
-            }
+                {
+                    appendTue();
+                    break;
+                }
             case 4:
-            {
-                appendWed();
-                break;
-            }
+                {
+                    appendWed();
+                    break;
+                }
             case 5:
-            {
-                appendThu();
-                break;
-            }
+                {
+                    appendThu();
+                    break;
+                }
             case 6:
-            {
-                appendFri();
-                break;
-            }
+                {
+                    appendFri();
+                    break;
+                }
             case 7:
-            {
-                appendSat();
-                break;
-            }
+                {
+                    appendSat();
+                    break;
+                }
 
 
         }
