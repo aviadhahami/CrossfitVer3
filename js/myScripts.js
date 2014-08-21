@@ -51,7 +51,11 @@ $(document).ready(function() {
     });
     $('#goBack').css('cursor', 'pointer');
 
-
+    //Mail validator - regex based
+    function validateEmail(email) {
+        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+    }
 
     /* Form Handeling Script*/
     function submitForm() {
@@ -68,7 +72,9 @@ $(document).ready(function() {
         } else {
             $("#contactName").css("border-color", "green");
         }
-        if (contactMail.length < 5 || contactMail == "" || contactMail == " ") {
+
+
+        if (!validateEmail(contactMail)) {
             $("#contactEmail").css("border-color", "red");
             $("#emailLabel").append("<p id='error'>Please enter a valid mail</p>");
             $("#emailLabel > p").delay(5000).fadeOut(500);
@@ -76,8 +82,7 @@ $(document).ready(function() {
             return;
         } else {
             $("#contactEmail").css("border-color", "green");
-        }
-        if (contactText.length < 5 || contactText == "" || contactText == " ") {
+        } if (contactText.length < 5 || contactText == "" || contactText == " ") {
             $("#contactTextarea").css("border-color", "red");
             $("#messageLabel").append("<p id='error'>Please enter a valid text</p>");
             $("#messageLabel > p").delay(5000).fadeOut(500);
@@ -103,9 +108,18 @@ $(document).ready(function() {
             if (response === "1") {
                 //we're good
                 console.log(response);
+                $("#superOverlay").css("display", "block");
+                $("#superOverlay").css("background-color", "rgba(70, 138, 48, 0.8)");
+                $("#superOverlay > h1").text("Your mail was sent successfuly !");
+                $("#superOverlay").delay(5000).fadeOut();
             } else {
                 //we're not good
                 console.error(response);
+                $("#superOverlay").css("display", "block");
+                $("#superOverlay").css("background-color", "rgba(178, 36, 0, 0.8)");
+                $("#superOverlay > h1").text("An error has occoured, please try again later.");
+                $("#superOverlay > h1").css("width", "100%");
+                $("#superOverlay").delay(5000).fadeOut();
             }
 
         });

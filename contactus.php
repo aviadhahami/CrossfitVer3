@@ -1,3 +1,19 @@
+<div id="superOverlay" style="
+    background-color: rgba(70, 138, 48, 0.8);
+    width: 100%;
+    height: 20%;
+    margin: 0;
+    position: fixed;
+    z-index: 20;
+    border-radius: 20px;
+    /* display: none; */
+    color: white;
+                              display:none;
+">
+    <h1 style="
+    color: white;
+">Your mail has been sent !</h1>
+</div>
 <div class="containerScroller">
     <div class="splash_container">
         <div class="top_container">
