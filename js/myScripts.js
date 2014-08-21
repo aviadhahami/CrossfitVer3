@@ -29,21 +29,6 @@ $(document).ready(function () {
 
     }, 30000);
 
-
-  /*  //nav-bar hover submenu display
-    $('.main-nav ul li').hover(
-        function () {
-            //show its submenu  
-            $('ul:first', this).css('display', 'block');
-            console.log("hovered");
-        },
-        function () {
-            //hide its submenu  
-            $('ul:first', this).css('display', 'none');
-        }
-    );*/
-
-
     //submit button listener
     $('#signButton').click(function () {
         submitWork();
@@ -55,12 +40,34 @@ $(document).ready(function () {
         //General event listener for newly appended child
         showSignUp();
     });
-    
+    $("#submitForm").click(function () {
+        submitForm();
+    });
+
+
     //Get previous post click listener
-    $('#goBack').click(function(){
+    $('#goBack').click(function () {
         alert("u wanna go back?");
     });
     $('#goBack').css('cursor', 'pointer');
+
+    /* Form Handeling Script*/
+    function submitForm() {
+        //TODO: should handle the empty slots option
+        var contactName = $("#contactName").val();
+        var contactMail = $("#contactEmail").val();
+        var contactText = $("#contactTextarea").val();
+        var post_data = {'userName': contactName, 'userMail': contactMail, 'userText': contactText};
+        //now we send to the server
+        console.log("Sending mail with the following attr " + contactName + " " + contactMail + " " + contactText);
+
+        $.post('../mail/mailHandler.php', post_data, function (response) {
+
+            console.log("responded with: " + response);
+           
+        });
+    }
+
 
     function submitWork() {
 
