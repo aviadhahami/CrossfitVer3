@@ -47,9 +47,52 @@ $(document).ready(function() {
 
     //Get previous post click listener
     $('#goBack').click(function() {
-        alert("u wanna go back?");
+        getPreviousPost();
     });
     $('#goBack').css('cursor', 'pointer');
+    //Change the post h2
+    //$("#wodPlan").text("תוכנית האימון");
+    
+    //Get previous post via ajax
+    function getPreviousPost() {
+        var id = $("#goBack").text();
+
+        console.log(id);
+        $.ajax({
+            //URL MIGHT NEED TO BE CHANGED !
+            type: "GET",
+            url: "../poll/pollHandler.php",
+            data: {
+                selection: selection,
+                name: name,
+                rawSelect: rawSelect
+            },
+            datatype: "html",
+            success: function(result) {
+                console.log(result);
+                var element = document.getElementById("signButton").parentNode;
+                var para = document.createElement("p");
+                para.setAttribute("class", "success");
+                para.setAttribute("style", "border: 1px solid black;");
+                var node = document.createTextNode("Thank you " + name + "! You've signed up for " + rawSelect);
+                para.appendChild(node);
+                element.appendChild(para);
+                //document.getElementById("success").fadeOut("slow").delay(2000);
+                //$('p', element)[0].fadeOut("slow").delay(2000);
+                setTimeout(function() {
+                    $(".success").fadeOut("slow");
+                }, 10000);
+
+            },
+            error: function(result) {
+                alert("something went wrong, please try again later.");
+                console.error(result);
+            }
+
+
+        });
+
+    }
 
     //Mail validator - regex based
     function validateEmail(email) {
