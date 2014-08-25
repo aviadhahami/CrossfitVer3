@@ -52,7 +52,7 @@ $(document).ready(function() {
     $('#goBack').css('cursor', 'pointer');
     //Change the post h2
     //$("#wodPlan").text("תוכנית האימון");
-    
+
     //Get previous post via ajax
     function getPreviousPost() {
         var id = $("#goBack").text();
@@ -69,8 +69,9 @@ $(document).ready(function() {
             },
             datatype: "html",
             success: function(result) {
-                console.log(result);
-                var element = document.getElementById("signButton").parentNode;
+                console.log(result + "ver2");
+                //var element = document.getElementById("signButton").parentNode;
+                var element = document.getElementById("response");
                 var para = document.createElement("p");
                 para.setAttribute("class", "success");
                 para.setAttribute("style", "border: 1px solid black;");
@@ -197,7 +198,8 @@ $(document).ready(function() {
                 datatype: "html",
                 success: function(result) {
                     console.log(result);
-                    var element = document.getElementById("signButton").parentNode;
+                    //var element = document.getElementById("signButton").parentNode;
+                    var element = document.getElementById("response");
                     var para = document.createElement("p");
                     para.setAttribute("class", "success");
                     para.setAttribute("style", "border: 1px solid black;");
