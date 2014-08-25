@@ -1,4 +1,4 @@
-<div class="containerScroller">
+<!--  <div class="containerScroller">
     <div class="splash_container">
         <div class="top_container">
             <div class="span_3_of_3">
@@ -101,3 +101,15 @@
     </div>
     </div>
 </div>
+
+-->
+
+<h2> IM TRYING TO PULL FROM A SUBJECT</h2>
+
+<? 
+query_posts('cat=6');
+while (have_posts()) : the_post();
+the_title();
+the_content();
+endwhile;
+    ?>

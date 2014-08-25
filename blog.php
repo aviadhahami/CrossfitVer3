@@ -168,6 +168,8 @@
          <?php next_post( '% &raquo; &raquo; ', '', 'yes'); ?>
          -->
         <?php break; ?>
-        <?php endwhile; ?>
+        <?php endwhile; 
+ wp_reset_postdata();?>
+
     </div>
 </div>
