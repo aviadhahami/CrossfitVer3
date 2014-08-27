@@ -107,7 +107,7 @@
 <h2> IM TRYING TO PULL FROM A SUBJECT</h2>
 
 <? 
-query_posts('cat=6');
+query_posts('category_name=fitness');
 while (have_posts()) : the_post();
 the_title();
 the_content();
