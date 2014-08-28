@@ -702,6 +702,20 @@ hr.style-one {
 
 }
 
+.generalText h2 {
+text-align: right;
+font-size: 1.125em;
+font-family: 'Open Sans Hebrew', serif;
+font-weight: 200;
+color: #555555;
+line-height: 1.2px;
+letter-spacing: 0.5px;
+}
+
+.generalText p {
+    clear: both;
+}
+
 button#viewPartButton {
 
     border-style: solid;
