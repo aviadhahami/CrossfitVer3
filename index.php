@@ -13,9 +13,14 @@
             require_once "fitness.php";
         } else if ($term == "contactus") {
             require_once 'contactus.php';
+        }else if ($term == "FAQ") {
+            require_once 'FAQ.php';
         } else if ($term == "about" || $term == "") {
             require_once "landing.php";
         }
+        else if ($term == "trainers") {
+            require_once "trainers.php";
+        }  
     } catch (Exception $e) {
 
         echo '<h1>Some error happened, please refresh</h1>';
