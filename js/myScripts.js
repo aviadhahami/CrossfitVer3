@@ -3,6 +3,17 @@ $(document).ready(function() {
     console.log("JQ LOADED");
 
 
+
+    // Trying to create parallax effect
+    var fixadent = $(".top_container"),
+        pos = fixadent.offset();
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > pos.top && $(fixadent.css('position') === 'initial')) {
+            $(fixadent).css('position', 'fixed');
+        }
+    });
+
+
     // fakeCarousel();
     setInterval(function() {
         var i = $('#carImg').attr("src").charAt($('#carImg').attr("src").length - 5);
@@ -317,6 +328,7 @@ $(document).ready(function() {
         //edit the image size in the blog
         var originWidth = $("div#wodList img").width();
         $("div#wodList img").css("max-width", originWidth / 2);
+
 
         //insert the daily sched
         var d = new Date();

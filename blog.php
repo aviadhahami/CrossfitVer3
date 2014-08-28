@@ -6,7 +6,8 @@
                 <h1 id="blogHeadTitle"> WORKOUT OF THE DAY </h1>
             </div>
         </div>
-        <?php while (have_posts()) : the_post() ?>
+
+        <?php query_posts( 'category_name=wod'); while (have_posts()) : the_post(); ?>
         <div class="content">
             <div class="blogger">
                 <div class="col_side left_span">
@@ -78,12 +79,13 @@
 
                         <!--   TAGS PART TO BE UPDATED-->
                         <hr class="style-one" />
-                        <div class="tagsContainer">
-                            <span>boxJumps</span>
-                            <span>boxJumps</span>
-                            <span>boxJumps</span>
-                            <span>boxJumps</span>
-                            <span>boxJumps</span>
+                        <div class="tagsContainer" id="tagsContainer">
+                         <?
+                                $tags = wp_get_post_tags($post->ID);
+                                foreach($tags as $tag){
+                                    echo( "<span>" .$tag->name . "</span>");
+                                }
+                            ?>
                         </div>
                         <hr class="style-one" />
                         <div class="blogComments">
@@ -162,14 +164,15 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> 
+
         <!--WE DONT NEED THIS REALLY ...
          <?php previous_post( '&laquo; &laquo; %', '', 'yes'); ?>|
          <?php next_post( '% &raquo; &raquo; ', '', 'yes'); ?>
+       
          -->
         <?php break; ?>
-        <?php endwhile; 
- wp_reset_postdata();?>
+        <?php endwhile; wp_reset_postdata();?>
 
     </div>
 </div>
