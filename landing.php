@@ -19,7 +19,7 @@ alert(hope);
             </div>
             </div>
             </div>
-    <div class="foot">
+<!--    <div class="foot">
         <div class="section">
             <div class="col_cus span_1_of_4_cus">
                 <img style="background-image:url(<?php bloginfo('template_url'); ?>/img/mpic1.jpg);" class="footImg" />
@@ -50,5 +50,5 @@ alert(hope);
                     <br>ניסיון אחת שתיים שלוש</p>
             </div>
         </div>
-    </div>
+    </div>-->
 

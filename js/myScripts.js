@@ -4,13 +4,37 @@ $(document).ready(function() {
 
 
 
-    // Trying to create parallax effect
-    var fixadent = $(".top_container"),
-        pos = fixadent.offset();
-    $(window).scroll(function() {
-        if ($(this).scrollTop() > pos.top && $(fixadent.css('position') === 'initial')) {
-            $(fixadent).css('position', 'fixed');
+    //Fixed "GO TOP" Button
+    //Check to see if the window is top if not then display button
+
+    $(document).bind("mousewheel", function() {
+        checkPos();
+        return false;
+    });
+    $(document).keydown(function(e) {
+        if (e.keyCode == 38 | e.keyCode == 40) {
+            checkPos();
+            return false;
         }
+    });
+
+    function checkPos() {
+        if ($(".blogheader").position().top <= -400) {
+            $('.scrollToTop').fadeIn();
+        } else {
+            $('.scrollToTop').fadeOut();
+        }
+    }
+
+
+
+
+    //Click event to scroll to top
+    $('.scrollToTop').click(function() {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 800);
+        return false;
     });
 
 

@@ -36,19 +36,24 @@
 <body>
 
     <div class="container group">
-        <div class="header group span_4_of_4">
-             <div class="logo header_blocks">
+        <div class="header group span_3_of_3">
+             <div class="logo">
                         <a href="<?php echo get_option('home'); ?>">
                     <img src="<?php bloginfo('template_url'); ?>/img/logo_white.png" class="logopic" alt="logo" />
                         </a>
              </div>
             
               
-                <div class="nav-bar header_blocks">
+                <div class="nav-bar">
                        <div class="main-nav">
                     <? wp_nav_menu(array( 'container_class'=>'main-nav', 'container' => 'nav-bar')); ?>
                         </div>
-                </div>      
+                </div>
+            
+             <div class="search">
+                  <img src="<?php bloginfo('template_url'); ?>/img/searchIcon.png" class="searchicon" />
+                  <input placeholder="HI AMIR" class="searchbar"></input> 
+                 </div>
         </div>
 
 
