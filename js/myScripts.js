@@ -52,17 +52,26 @@ $(document).ready(function() {
 
         var finalStr = $('#carImg').attr("src").substring(0, $('#carImg').attr("src").length - 5) + i + ".png";
 
-        $('#carImg').animate({
+
+        $("#carImg").animate({
             opacity: 0
-        }, 500, function() {
+        }, 100);
+        $('#carImg').attr('src', finalStr);
+        $("#carImg").animate({
+            opacity: 1
+        }, 600);
+
+        /* $('#carImg').animate({
+            opacity: 0
+        }, 100, function() {
             $('#carImg').attr('src', finalStr);
             $('#carImg').animate({
                 opacity: 1
             }, 500);
 
         });
-
-    }, 30000);
+*/
+    }, 7000);
 
     //submit button listener
     $('#signButton').click(function() {
