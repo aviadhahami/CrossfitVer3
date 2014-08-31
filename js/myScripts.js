@@ -147,7 +147,6 @@ $(document).ready(function() {
 
     /* Form Handeling Script*/
     function submitForm() {
-        //TODO: should handle the empty slots option
         var contactName = $("#contactName").val();
         var contactMail = $("#contactEmail").val();
         var contactText = $("#contactTextarea").val();
@@ -313,9 +312,9 @@ $(document).ready(function() {
                     });
 
                     var percentage = (counter / totalPart) * 100;
-                    $("#results").append("<p>" + counter + " which is " + (percentage | 0) + "% of the total participants today</p>");
+                    $("#results").append("<p>"+ counter +" משתתפים</p>");
                     $("#results").append("<div id='" + optionCode + "' style='width: 300px;height:20px; border: 1px solid #ddd;border-radius: 5px; overflow: hidden; display:inline-block;margin:0px 10px 5px 5px;vertical-align:top;'></div>");
-                    $("#" + optionCode).append("<div id='" + optionCode + "Child' style='color: #fff;text-align: right;height: 25px;width: 0;background-color: #0ba1b5;border-radius: 3px; '></div>");
+                    $("#" + optionCode).append("<div id='" + optionCode + "Child' style='color: #fff;text-align: right;height: 25px;width: 0;background-color: rgb(38, 187, 157);border-radius: 3px; '></div>");
                     var progressBarWidth = percentage * $("#" + optionCode).width() / 100;
                     $("#" + optionCode + "Child").width(progressBarWidth).html((percentage | 0) + "% ");
                 });

@@ -7,12 +7,13 @@
             </div>
         </div>
         <?php
-             $id = mysql_real_escape_string($_GET["id"]);
-            if (is_numeric($id)){
-                //Get post by ID
-                echo("<script>alert('NUMERIC');</script>");
-                $post = get_post($id); 
-                ?>
+        $id = mysql_real_escape_string($_GET["id"]);
+        if (is_numeric($id)) {
+            //Get post by ID
+            echo ("<script>alert('NUMERIC');</script>");
+            $post = get_post($id);
+
+        ?>
               
         <div class="content">
             <div class="blogger">
@@ -58,13 +59,15 @@
                     <h2>אימוני עבר </h2>
                     <hr class="style-one" />
                     <div class="recentPosts">
-                        <?php $prev_post=get_previous_post(); if (!empty( $prev_post )): ?>
+                        <?php $prev_post = get_previous_post();
+    if (!empty($prev_post)): ?>
                         <div class="recentPostSingle">
                             <img style="background-image:url(<?php bloginfo('template_url'); ?>/img/mpic2.jpg);" class="recentPostImg" />
                             <div class="generalText">
-                                <span class="recentPostTextHeader"><?php echo "<a id='goBack'>" . $prev_post->post_title . "</a>";?></span>
+                                <span class="recentPostTextHeader"><?php echo
+        "<a id='goBack'>" . $prev_post->post_title . "</a>"; ?></span>
                                 <br>
-                                <? echo get_the_time( 'd-m-Y', $prev_post->ID); ?>
+                                <? echo get_the_time('d-m-Y', $prev_post->ID); ?>
                             </div>
                             <?php endif; ?>
                         </div>
@@ -79,7 +82,7 @@
                     <div class="col_side span_2_of_2">
                         <div id="wodList">
                             <div id="postContainer">
-                                <?php  echo $post->post_content;  ?>
+                                <?php echo $post->post_content; ?>
                             </div>
                         </div>
 
@@ -87,11 +90,11 @@
                         <hr class="style-one" />
                         <div class="tagsContainer" id="tagsContainer">
                          <?
-                                $tags = wp_get_post_tags($post->ID);
-                                foreach($tags as $tag){
-                                    echo( "<span>" .$tag->name . "</span>");
-                                }
-                            ?>
+    $tags = wp_get_post_tags($post->ID);
+    foreach ($tags as $tag) {
+        echo ("<span>" . $tag->name . "</span>");
+    }
+?>
                         </div>
                         <hr class="style-one" />
                         <div class="blogComments">
@@ -173,21 +176,23 @@
         </div> 
 
         <!--WE DONT NEED THIS REALLY ...
-         <?php previous_post( '&laquo; &laquo; %', '', 'yes'); ?>|
-         <?php next_post( '% &raquo; &raquo; ', '', 'yes'); ?>
+         <?php previous_post('&laquo; &laquo; %', '', 'yes'); ?>|
+         <?php next_post('% &raquo; &raquo; ', '', 'yes'); ?>
        
          -->
-        <?php wp_reset_postdata();?>
+        <?php wp_reset_postdata(); ?>
 
     </div>
 </div>
         
         <?
-            }else{
-                //regular loop
-                 echo("<script>alert('NOT NUMERIC');</script>");
-                query_posts( 'category_name=wod'); while (have_posts()) : the_post();
-          ?>
+} else {
+    //regular loop
+    echo ("<script>alert('NOT NUMERIC');</script>");
+    query_posts('category_name=wod');
+    while (have_posts()):
+        the_post();
+?>
         
         
         
@@ -235,13 +240,15 @@
                     <h2>אימוני עבר </h2>
                     <hr class="style-one" />
                     <div class="recentPosts">
-                        <?php $prev_post=get_previous_post(); if (!empty( $prev_post )): ?>
+                        <?php $prev_post = get_previous_post();
+        if (!empty($prev_post)): ?>
                         <div class="recentPostSingle">
                             <img style="background-image:url(<?php bloginfo('template_url'); ?>/img/mpic2.jpg);" class="recentPostImg" />
                             <div class="generalText">
-                                <span class="recentPostTextHeader"><?php echo "<a id='goBack'>" . $prev_post->post_title . "</a>";?></span>
+                                <span class="recentPostTextHeader"><?php echo
+            "<a id='goBack'>" . $prev_post->post_title . "</a>"; ?></span>
                                 <br>
-                                <? echo get_the_time( 'd-m-Y', $prev_post->ID); ?>
+                                <? echo get_the_time('d-m-Y', $prev_post->ID); ?>
                             </div>
                             <?php endif; ?>
                         </div>
@@ -264,11 +271,11 @@
                         <hr class="style-one" />
                         <div class="tagsContainer" id="tagsContainer">
                          <?
-                                $tags = wp_get_post_tags($post->ID);
-                                foreach($tags as $tag){
-                                    echo( "<span>" .$tag->name . "</span>");
-                                }
-                            ?>
+        $tags = wp_get_post_tags($post->ID);
+        foreach ($tags as $tag) {
+            echo ("<span>" . $tag->name . "</span>");
+        }
+?>
                         </div>
                         <hr class="style-one" />
                         <div class="blogComments">
@@ -350,14 +357,15 @@
         </div> 
 
         <!--WE DONT NEED THIS REALLY ...
-         <?php previous_post( '&laquo; &laquo; %', '', 'yes'); ?>|
-         <?php next_post( '% &raquo; &raquo; ', '', 'yes'); ?>
+         <?php previous_post('&laquo; &laquo; %', '', 'yes'); ?>|
+         <?php next_post('% &raquo; &raquo; ', '', 'yes'); ?>
        
          -->
         <?php break; ?>
-        <?php endwhile; wp_reset_postdata();?>
+        <?php endwhile;
+    wp_reset_postdata(); ?>
 
     </div>
 </div>
- <?  }
-        ?>
+ <? }
+?>
