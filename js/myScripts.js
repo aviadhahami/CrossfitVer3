@@ -6,25 +6,25 @@ $(document).ready(function() {
 
     //Fixed "GO TOP" Button
     //Check to see if the window is top if not then display button
-
-    $(document).bind("mousewheel", function() {
-        checkPos();
-        return false;
-    });
-    $(document).keydown(function(e) {
-        if (e.keyCode == 38 | e.keyCode == 40) {
-            checkPos();
-            return false;
-        }
-    });
-
-    function checkPos() {
-        if ($(".blogheader").position().top <= -400) {
+    $(window).scroll(function() {
+        console.log("SCROLLING");
+        if ($(".splash_container").scrollTop() > 100) {
             $('.scrollToTop').fadeIn();
         } else {
             $('.scrollToTop').fadeOut();
         }
-    }
+    });
+
+    $(document).bind("scroll", function() {
+        alert("SCROLLIGN");
+    });
+    //Click event to scroll to top
+    $('.scrollToTop').click(function() {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 800);
+        return false;
+    });
 
 
 
