@@ -9,6 +9,8 @@
             require_once "blog.php";
         } else if ($term == "about") {
             require_once "about.php";
+        } else if ($term == "whatIsFitness") {
+            require_once "whatIsFitness.php";
         } else if ($term == "prot") {
             require_once "prot.php";
         }else if ($term == "fitness") {
