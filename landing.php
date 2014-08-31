@@ -8,9 +8,10 @@ alert(hope);
                 <div class="overlayText">
                 <div class="floaterback">
                 <h1 id="title">
-                    לקחת את הגוף בידיים, משפט מעורר השראה לפרצוף? לגמרי!</h1>
+                    CROSSFIT HERZELIYA
+                    </h1>
                <!-- <h2 id="title">Number One Crossfit Brotherhood</h2>-->
-                <button id="overlay" class="buttontext" onclick='alert("clicked");'>קרא עוד</button>
+                <button id="overlay" class="buttontext" onclick='window.open("http://aviadclicktale.co.nf/crossfit/?page=blog","_self");'>קרא עוד</button>
                     </div>
             <br>
             <br>

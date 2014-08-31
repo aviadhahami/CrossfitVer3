@@ -317,6 +317,7 @@ $(document).ready(function() {
                     $("#" + optionCode).append("<div id='" + optionCode + "Child' style='color: #fff;text-align: right;height: 25px;width: 0;background-color: rgb(38, 187, 157);border-radius: 3px; '></div>");
                     var progressBarWidth = percentage * $("#" + optionCode).width() / 100;
                     $("#" + optionCode + "Child").width(progressBarWidth).html((percentage | 0) + "% ");
+                    $("#results").append("<hr class='style-one'>");
                 });
 
             },
