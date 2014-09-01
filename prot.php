@@ -1,9 +1,9 @@
-<div class="containerScroller">
+﻿<div class="containerScroller">
     <div class="splash_container">
         <div class="top_container">
             <div class="span_3_of_3">
-                <img src="<?php bloginfo('template_url'); ?>/img/blogbg.jpg" class="blogHeader"/>
-
+                     <img style="background-image:url(<?php bloginfo('template_url'); ?>/img/headerPhoto2.png);" class="blogHeader" />
+                
                 <h1 id="blogHeadTitle"> PROTEIN POWDERS </h1>
             </div>
         </div>

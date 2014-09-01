@@ -548,26 +548,15 @@ button#overlay:hover {
 
 .blogHeader {
 
-    position: initial;
-
-    top: 75px;
-
-    bottom: 0;
-
-    left: 0;
-
-    right: 0;
-
-    min-width: 1695px;
-
-    min-height: 459px;
-
-    width: 100%;
-
-    height: auto;
-
-    z-index: -999;
-
+position: relative;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+min-width: 1695px;
+min-height: 459px;
+width: 100%;
+height: auto;
+z-index: -999;
 }
 
 h1#blogHeadTitle {
@@ -610,7 +599,7 @@ h1#contactTitle {
 
     font-size: 36px;
 
-    font-family: "Open Sans Hebrew";
+    font-family: OpenSansHebrew-Light;
 
     color: rgb(0, 0, 0);
 
@@ -646,7 +635,7 @@ h1#blogTitle {
 
     font-size: 36px;
 
-    font-family: "Open Sans Hebrew";
+    font-family: OpenSansHebrew-Light;
 
     color: rgb(0, 0, 0);
 
@@ -868,9 +857,8 @@ hr.style-one {
 
     font-size: 1.125em;
 
-    font-family: 'Open Sans Hebrew', serif;
+    font-family: OpenSansHebrew-Light;
 
-    font-weight: 200;
 
     color: #555555;
 
@@ -958,11 +946,9 @@ h2 {
 
     font-size: 1.125em;
 
-    ;
 
-    font-family: 'Open Sans Hebrew', serif;
+    font-family: OpenSansHebrew-Light;
 
-    font-weight: 200;
 
     color: #555555;
 
@@ -1104,9 +1090,6 @@ label {
 
     position: absolute;
 
-    font-size: 0.875em;
-
-    font-family: "Open Sans Hebrew";
 
     color: #bdbdbd;
 
@@ -1119,10 +1102,6 @@ label {
 }
 
 .listText {
-
-    font-size: 0.875em;
-
-    font-family: "Open Sans Hebrew";
 
     color: rgb(85, 85, 85);
 
