@@ -4,7 +4,7 @@ $(document).ready(function() {
 
 
 
-    //Fixed "GO TOP" Button
+  /*  //Fixed "GO TOP" Button
     //Check to see if the window is top if not then display button
     $(window).scroll(function() {
         console.log("SCROLLING");
@@ -35,7 +35,7 @@ $(document).ready(function() {
             scrollTop: 0
         }, 800);
         return false;
-    });
+    });*/
 
 
     // fakeCarousel();
