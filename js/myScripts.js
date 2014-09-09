@@ -1,10 +1,10 @@
 "use strict";
-$(document).ready(function() { 
+$(document).ready(function() {
     console.log("JQ LOADED");
 
 
 
-  /*  //Fixed "GO TOP" Button
+    /*  //Fixed "GO TOP" Button
     //Check to see if the window is top if not then display button
     $(window).scroll(function() {
         console.log("SCROLLING");
@@ -39,29 +39,30 @@ $(document).ready(function() {
 
 
     // fakeCarousel();
-    setInterval(function() {
-        var i = $('#carImg').attr("src").charAt($('#carImg').attr("src").length - 5);
-        var index = parseInt(i);
-        if (index === 5) {
-            index = 1;
-        } else {
-            index++;
-        }
-        i = index.toString();
+    if ($('#carImg').length > 0) {
+        setInterval(function() {
+            var i = $('#carImg').attr("src").charAt($('#carImg').attr("src").length - 5);
+            var index = parseInt(i);
+            if (index === 5) {
+                index = 1;
+            } else {
+                index++;
+            }
+            i = index.toString();
 
 
-        var finalStr = $('#carImg').attr("src").substring(0, $('#carImg').attr("src").length - 5) + i + ".png";
+            var finalStr = $('#carImg').attr("src").substring(0, $('#carImg').attr("src").length - 5) + i + ".png";
 
 
-        $("#carImg").animate({
-            opacity: 0
-        }, 100);
-        $('#carImg').attr('src', finalStr);
-        $("#carImg").animate({
-            opacity: 1
-        }, 600);
+            $("#carImg").animate({
+                opacity: 0
+            }, 100);
+            $('#carImg').attr('src', finalStr);
+            $("#carImg").animate({
+                opacity: 1
+            }, 600);
 
-        /* $('#carImg').animate({
+            /* $('#carImg').animate({
             opacity: 0
         }, 100, function() {
             $('#carImg').attr('src', finalStr);
@@ -71,7 +72,8 @@ $(document).ready(function() {
 
         });
 */
-    }, 7000);
+        }, 7000);
+    }
 
     //submit button listener
     $('#signButton').click(function() {
@@ -312,7 +314,7 @@ $(document).ready(function() {
                     });
 
                     var percentage = (counter / totalPart) * 100;
-                    $("#results").append("<p>"+ counter +" משתתפים</p>");
+                    $("#results").append("<p>" + counter + " משתתפים</p>");
                     $("#results").append("<div id='" + optionCode + "' style='width: 300px;height:20px; border: 1px solid #ddd;border-radius: 5px; overflow: hidden; display:inline-block;margin:0px 10px 5px 5px;vertical-align:top;'></div>");
                     $("#" + optionCode).append("<div id='" + optionCode + "Child' style='color: #fff;text-align: right;height: 25px;width: 0;background-color: rgb(38, 187, 157);border-radius: 3px; '></div>");
                     var progressBarWidth = percentage * $("#" + optionCode).width() / 100;
