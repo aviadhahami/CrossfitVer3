@@ -3,10 +3,11 @@
 $idInput = mysql_real_escape_string($_GET["id"]);
 $flag = false;
 if (is_numeric($idInput)) {
-    if ('publish' == get_post_status($post_id)) {
+    if ('publish' == get_post_status($idInput)) {
         // means id input is legit and post exists
         $flag = true;
-        echo ("<script>console.log('POST EXISTS !');</script>");
+        $idInput = (integer) $idInput;
+        echo ("<script>console.log('POST EXISTS! seeking for " . $idInput . "');</script>");
     }
 }
 $counter = 0;
@@ -18,19 +19,24 @@ $prevTitle = array();
 
 switch ($flag) {
     case (true):
+    
         {
+            
             //We need to query the posts and look for the one the user picked.
             query_posts('category_name=wod');
             while (have_posts()):
                 the_post();                {
-                    echo ("<script>console.log(" . $post->ID . ");</script>");
+                    echo ("<script>console.log('counter is " . $counter. "');</script>");
                     echo ("<script>console.log('first loop - post exist');</script>");
+                    echo ("<script>console.log(" . $post->ID . ");</script>");
                     switch ($counter) {
-                        case 0:
+                        case (0):
                             {
                                 if ($post->ID == $idInput) {
+                                    echo ("<script>console.log('FOUND THE POST!');</script>");
                                     //we've found the post
-                                    $blogContent = $post->post_content;
+                                    
+                                    $blogContent = apply_filters( 'the_content', $post->post_content );
                                     $blogTitle = $post->post_title;
                                     $tags = wp_get_post_tags($post->ID);
                                     foreach ($tags as $tag) {
@@ -38,49 +44,57 @@ switch ($flag) {
                                     }
                                     //let's raise the floor
                                     $counter++;
-                                    break;
+                                     echo ("<script>console.log('incremented counter, case 0');</script>");
                                 }
+                                break;
                             }
-                        case 1:
+                        case (1):
                             {
                                 $prevTitle[0] = $post->post_title;
                                 $prevID[0] = $post->ID;
                                  echo '<script>console.log("' . $post->post_title . $post->ID .'");</script>';
                                 $counter++;
+                                echo ("<script>console.log('incremented counter, case 1');</script>");
                                 break;
                             }
-                        case 2:
+                        case (2):
                             {
                                 $prevTitle[1] = $post->post_title;
-                                $prevID[2] = $post->ID;
+                                $prevID[1] = $post->ID;
                                  echo "<script>console.log('" . $post->post_title . $post->ID ."');</script>";
                                 $counter++;
+                                echo ("<script>console.log('incremented counter, case 2');</script>");
                                 break;
 
                             }
-                        case 3:
+                        case (3):
                             {
                                 $prevTitle[2] = $post->post_title;
                                 $prevID[2] = $post->ID;
                                  echo "<script>console.log('" . $post->post_title . $post->ID ."');</script>";
+                                echo ("<script>console.log('incremented counter, case 3');</script>");
                                 break;
                             }
+                        default:{
+                            break;
+                        }
+                        
                     }
                 }
             endwhile;
-
+            break;
         }
-    default:
+    case(false):
         {
             //regular loop without ID search
             query_posts('category_name=wod');
             while (have_posts()):
                 the_post();                {
-                    echo ("<script>console.log('second loop,fresh post/post doesnt exist');</script>");
+                    echo ("<script>console.log('second loop');</script>");
                     switch ($counter) {
                         case (0):
                             {
-                                echo "<script>console.log('" . $post->ID ."');</script>";
+                                echo "<script>console.log('" . $post->ID ." - MAIN BLOG');</script>";
                                 $blogContent = $post->post_content;
                                 $blogTitle = $post->post_title;
 
@@ -103,7 +117,7 @@ switch ($flag) {
                         case 2:
                             {
                                 $prevTitle[1] = $post->post_title;
-                                $prevID[2] = $post->ID;
+                                $prevID[1] = $post->ID;
                                  echo "<script>console.log('" . $post->post_title . $post->ID ."');</script>";
                                 $counter++;
                                 break;
@@ -120,6 +134,7 @@ switch ($flag) {
                     }
                 }
             endwhile;
+            break;
         }
 }
 for ($i = 0; $i < 3; $i++) {
