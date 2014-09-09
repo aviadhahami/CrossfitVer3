@@ -873,9 +873,19 @@ hr.style-one {
     clear: both;
 
 }
-
+button#viewPartButton:hover {
+    transition: all 0.4s ease;
+-o-transition: all 0.4s ease;
+-webkit-transition: all 0.4s ease;
+    
+    color:white;
+    background-color: rgb(38, 187, 157);
+    border-color:  rgb(38, 187, 157);
+}
 button#viewPartButton {
-
+transition: all 0.4s ease;
+-o-transition: all 0.4s ease;
+-webkit-transition: all 0.4s ease;
     border-style: solid;
 
     border-width: 1px;
@@ -904,8 +914,23 @@ button#viewPartButton {
 
 }
 
-button#signButton {
+button#signButton:hover {
 
+    color: #fff;
+    border-color: rgb(99, 99, 99);
+    border-width: 1px;
+    background: rgb(255, 255, 255);
+    color: #323232;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+}
+
+button#signButton {
+    transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
     color: white;
 
     text-shadow: none;

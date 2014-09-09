@@ -33,7 +33,7 @@
                             </div>
                     </div>
 
-                    <h2>אימוני עבר </h2>
+                   <!-- <h2>אימוני עבר </h2>
                     <hr class="style-one"/>
                     <div class="recentPosts">
                         <div class="recentPostSingle">
@@ -67,7 +67,7 @@
                         </div>
 
 
-                    </div>
+                    </div>-->
                 </div>
 
                 <div class="midspace_span"></div>
