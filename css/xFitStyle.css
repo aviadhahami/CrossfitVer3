@@ -141,6 +141,8 @@ html {
 
     color: white;
 
+    direction: ltr;
+
     background: none;
 
     box-shadow: none;
@@ -548,15 +550,24 @@ button#overlay:hover {
 
 .blogHeader {
 
-position: relative;
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
-min-width: 1695px;
-min-height: 459px;
-width: 100%;
-height: auto;
-z-index: -999;
+    position: relative;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    background-size: cover;
+
+    min-width: 1695px;
+
+    min-height: 459px;
+
+    width: 100%;
+
+    height: auto;
+
+    z-index: -999;
+
 }
 
 h1#blogHeadTitle {
@@ -849,6 +860,8 @@ hr.style-one {
 
     font-weight: 200;
 
+    max-width: 160px;
+
 }
 
 .generalText h2 {
@@ -858,7 +871,6 @@ hr.style-one {
     font-size: 1.125em;
 
     font-family: OpenSansHebrew-Light;
-
 
     color: #555555;
 
@@ -873,19 +885,31 @@ hr.style-one {
     clear: both;
 
 }
+
 button#viewPartButton:hover {
+
     transition: all 0.4s ease;
--o-transition: all 0.4s ease;
--webkit-transition: all 0.4s ease;
-    
-    color:white;
+
+    -o-transition: all 0.4s ease;
+
+    -webkit-transition: all 0.4s ease;
+
+    color: white;
+
     background-color: rgb(38, 187, 157);
-    border-color:  rgb(38, 187, 157);
+
+    border-color: rgb(38, 187, 157);
+
 }
+
 button#viewPartButton {
-transition: all 0.4s ease;
--o-transition: all 0.4s ease;
--webkit-transition: all 0.4s ease;
+
+    transition: all 0.4s ease;
+
+    -o-transition: all 0.4s ease;
+
+    -webkit-transition: all 0.4s ease;
+
     border-style: solid;
 
     border-width: 1px;
@@ -917,20 +941,33 @@ transition: all 0.4s ease;
 button#signButton:hover {
 
     color: #fff;
+
     border-color: rgb(99, 99, 99);
+
     border-width: 1px;
+
     background: rgb(255, 255, 255);
+
     color: #323232;
+
     text-decoration: none;
+
     transition: all 0.4s ease;
+
     -o-transition: all 0.4s ease;
+
     -webkit-transition: all 0.4s ease;
+
 }
 
 button#signButton {
+
     transition: all 0.4s ease;
+
     -o-transition: all 0.4s ease;
+
     -webkit-transition: all 0.4s ease;
+
     color: white;
 
     text-shadow: none;
@@ -971,9 +1008,7 @@ h2 {
 
     font-size: 1.125em;
 
-
     font-family: OpenSansHebrew-Light;
-
 
     color: #555555;
 
@@ -1114,7 +1149,6 @@ label {
     counter-increment: my-badass-counter;
 
     position: absolute;
-
 
     color: #bdbdbd;
 

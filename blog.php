@@ -6,6 +6,7 @@ if (is_numeric($idInput)) {
     if ('publish' == get_post_status($post_id)) {
         // means id input is legit and post exists
         $flag = true;
+        echo ("<script>console.log('POST EXISTS !');</script>");
     }
 }
 $counter = 0;
@@ -14,7 +15,7 @@ $blogTitle;
 $blogTags;
 $prevID = array();
 $prevTitle = array();
-echo ("<script>console.log('POST EXISTS !');</script>");
+
 switch ($flag) {
     case (true):
         {
@@ -75,7 +76,7 @@ switch ($flag) {
             query_posts('category_name=wod');
             while (have_posts()):
                 the_post();                {
-                    echo ("<script>console.log('second loop, post doesnt exist');</script>");
+                    echo ("<script>console.log('second loop,fresh post/post doesnt exist');</script>");
                     switch ($counter) {
                         case (0):
                             {
@@ -178,7 +179,7 @@ for ($i = 0; $i < 3; $i++) {
                         </div>
 
                     </div>
-                   <!-- <h2>אימוני עבר </h2>
+                    <h2>אימוני עבר </h2>
                     <hr class="style-one" />
                     <div class="recentPosts">
 
@@ -204,7 +205,7 @@ for ($i = 0; $i < 3; $i++) {
                             </div>
                         </div>
                         <? } //END OF FOR LOOP ?>
-                    </div>-->
+                    </div>
                 </div>
                 
                 
@@ -303,7 +304,7 @@ echo $blogTags;
                      </dl>
 
                     </div>
-                </div>-->
+                </div>   -->
             </div>
         </div> 
 <?

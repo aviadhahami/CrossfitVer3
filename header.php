@@ -53,7 +53,7 @@
 
             <div class="search">
                 <img src="<?php bloginfo('template_url'); ?>/img/searchIcon.png" class="searchicon" />
-                <input placeholder="HI AMIR" class="searchbar"></input>
+                <input dir="ltr" placeholder="Search..." class="searchbar"></input>
             </div>
         </div>
 
