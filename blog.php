@@ -1,3 +1,133 @@
+<!-- PHP CODE PREP GOES HERE-->
+<?
+$idInput = mysql_real_escape_string($_GET["id"]);
+$flag = false;
+if (is_numeric($idInput)) {
+    if ('publish' == get_post_status($post_id)) {
+        // means id input is legit and post exists
+        $flag = true;
+    }
+}
+$counter = 0;
+$blogContent;
+$blogTitle;
+$blogTags;
+$prevID = array();
+$prevTitle = array();
+echo ("<script>console.log('POST EXISTS !');</script>");
+switch ($flag) {
+    case (true):
+        {
+            //We need to query the posts and look for the one the user picked.
+            query_posts('category_name=wod');
+            while (have_posts()):
+                the_post();                {
+                    echo ("<script>console.log(" . $post->ID . ");</script>");
+                    echo ("<script>console.log('first loop - post exist');</script>");
+                    switch ($counter) {
+                        case 0:
+                            {
+                                if ($post->ID == $idInput) {
+                                    //we've found the post
+                                    $blogContent = $post->post_content;
+                                    $blogTitle = $post->post_title;
+                                    $tags = wp_get_post_tags($post->ID);
+                                    foreach ($tags as $tag) {
+                                        $blogTags .= "<span>" . $tag->name . "</span>";
+                                    }
+                                    //let's raise the floor
+                                    $counter++;
+                                    break;
+                                }
+                            }
+                        case 1:
+                            {
+                                $prevTitle[0] = $post->post_title;
+                                $prevID[0] = $post->ID;
+                                 echo '<script>console.log("' . $post->post_title . $post->ID .'");</script>';
+                                $counter++;
+                                break;
+                            }
+                        case 2:
+                            {
+                                $prevTitle[1] = $post->post_title;
+                                $prevID[2] = $post->ID;
+                                 echo "<script>console.log('" . $post->post_title . $post->ID ."');</script>";
+                                $counter++;
+                                break;
+
+                            }
+                        case 3:
+                            {
+                                $prevTitle[2] = $post->post_title;
+                                $prevID[2] = $post->ID;
+                                 echo "<script>console.log('" . $post->post_title . $post->ID ."');</script>";
+                                break;
+                            }
+                    }
+                }
+            endwhile;
+
+        }
+    default:
+        {
+            //regular loop without ID search
+            query_posts('category_name=wod');
+            while (have_posts()):
+                the_post();                {
+                    echo ("<script>console.log('second loop, post doesnt exist');</script>");
+                    switch ($counter) {
+                        case (0):
+                            {
+                                echo "<script>console.log('" . $post->ID ."');</script>";
+                                $blogContent = $post->post_content;
+                                $blogTitle = $post->post_title;
+
+                                $tags = wp_get_post_tags($post->ID);
+                                foreach ($tags as $tag) {
+                                    $blogTags .= "<span>" . $tag->name . "</span>";
+                                }
+                                //let's raise the floor
+                                $counter++;
+                                break;
+                            }
+                        case 1:
+                            {
+                                $prevTitle[0] = $post->post_title;
+                                $prevID[0] = $post->ID;
+                                $counter++;
+                                 echo "<script>console.log('" . $post->post_title . $post->ID ."');</script>";
+                                break;
+                            }
+                        case 2:
+                            {
+                                $prevTitle[1] = $post->post_title;
+                                $prevID[2] = $post->ID;
+                                 echo "<script>console.log('" . $post->post_title . $post->ID ."');</script>";
+                                $counter++;
+                                break;
+
+                            }
+                        case 3:
+                            {
+                                $prevTitle[2] = $post->post_title;
+                                $prevID[2] = $post->ID;
+                                 echo "<script>console.log('" . $post->post_title . $post->ID ."');</script>";
+                                break;
+                            }
+
+                    }
+                }
+            endwhile;
+        }
+}
+for ($i = 0; $i < 3; $i++) {
+    echo "<script>console.log('" . $prevID[$i] . $i ."');</script>";
+    echo "<script>console.log('" + $prevTitle[$i] + "');</script>";
+}
+
+?>
+<!-- END OF PREP CODE-->
 <div class="containerScroller">
     <div class="splash_container">
         <div class="top_container">
@@ -6,27 +136,7 @@
                 <h1 id="blogHeadTitle"> WORKOUT OF THE DAY </h1>
             </div>
         </div>
-        <?php
-$id = mysql_real_escape_string($_GET["id"]);
-//following condition happenes if the given number is number, the post exists
-if (is_numeric($id) && !(false === get_post_status($id))) {
-    query_posts('category_name=wod');
-    while (have_posts()):
-        the_post();
 
-    }
-else {
-    //regular loop should go here
-}
-
-//regular loop
-query_posts('category_name=wod');
-while (have_posts()):
-    the_post();
-?>
-        
-        
-        
         <div class="content">
             <div class="blogger">
                 <div class="col_side left_span">
@@ -71,30 +181,43 @@ while (have_posts()):
                     <h2>אימוני עבר </h2>
                     <hr class="style-one" />
                     <div class="recentPosts">
-                        <?php $prev_post = get_previous_post();
-    if (!empty($prev_post)): ?>
+
+<?
+
+for ($i = 0; $i < 3; $i++) {
+
+    if ($prevTitle[$i] == '' || $prevTitle[$i] == " ") {
+        $i++;
+        break;
+    }
+?>
+
+
                         <div class="recentPostSingle">
                             <img style="background-image:url(<?php bloginfo('template_url'); ?>/img/mpic2.jpg);" class="recentPostImg" />
                             <div class="generalText">
-                                <span class="recentPostTextHeader"><?php echo
-        "<a id='goBack'>" . $prev_post->post_title . "</a>"; ?></span>
+                                <span class="recentPostTextHeader">
+                                <?php echo ("<a id='goBack' href='/crossfit/?page=blog&id=" .
+    $prevID[$i] . "'>" . $prevTitle[$i] . "</a>"); ?></span>
                                 <br>
-                                <? echo get_the_time('d-m-Y', $prev_post->ID); ?>
+                                <? echo get_the_time('d-m-Y', $prevID[$i]); ?>
                             </div>
-                            <?php endif; ?>
                         </div>
+                        <? } //END OF FOR LOOP ?>
                     </div>
                 </div>
+                
+                
                 <div class="midspace_span"></div>
                 <div class="col_side right_span">
                     <h1 id="blogTitle">
-                  <?php the_title(); ?>
+                  <?php echo $blogTitle; ?>
                </h1>
                     <hr class="style-one" />
                     <div class="col_side span_2_of_2">
                         <div id="wodList">
                             <div id="postContainer">
-                                <?php the_content(); ?>
+                                <?php echo $blogContent; ?>
                             </div>
                         </div>
 
@@ -102,10 +225,7 @@ while (have_posts()):
                         <hr class="style-one" />
                         <div class="tagsContainer" id="tagsContainer">
                          <?
-    $tags = wp_get_post_tags($post->ID);
-    foreach ($tags as $tag) {
-        echo ("<span>" . $tag->name . "</span>");
-    }
+echo $blogTags;
 ?>
                         </div>
                         <hr class="style-one" />
@@ -186,16 +306,8 @@ while (have_posts()):
                 </div>
             </div>
         </div> 
-
-        <!--WE DONT NEED THIS REALLY ...
-         <?php previous_post('&laquo; &laquo; %', '', 'yes'); ?>|
-         <?php next_post('% &raquo; &raquo; ', '', 'yes'); ?>
-       
-         -->
-        <?php break; ?>
-        <?php endwhile;
+<?
 wp_reset_postdata(); ?>
 
     </div>
 </div>
-?>
