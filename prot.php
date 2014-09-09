@@ -24,19 +24,16 @@
             <div class="blogger">
                 <div class="col_side left_span">
                     <div class="span_2_of_3 signup">
-                        <h2> מהו כושר גופני ומי בכושר? </h2>
+                        <h2> עקבו אחרינו</h2>
                         <hr class="style-one"/>
-                        <img style="background-image:url(<?php bloginfo('template_url'); ?>/img/mpic2.jpg);"
-                             class="blockImg"/>
+                    
 
-                        <div class="generalText">
-                            <br>
-                          מגזין "אאוטסייד" (Outside magazin) הכתיר את מתחרה הטריאתלון מארק אלן כ-"Fittest man on earth". בואו נניח לרגע שזוכה שש הפעמים המפורסם בטריאתלון "איש הברזל" אכן מתאים להגדרה, אז איזה תואר ניתן לזוכה הדקאתלון סיימון פולמן אשר גם בעל סיבולת וכושר עמידה בלתי יאומן, אך ינצח את מר אלן בכל השוואה הכוללת חוזק, עוצמה, מהירות וקואורדינאציה?
-אולי ההגדרה לכושר לא כוללת חוזק, מהירות, עוצמה וקואורדינאציה למרות שזה נראה די מוזר. מילון ובסטר מגדיר כושר ולהיות בכושר כיכולת למסור גנים ולהיות בריא. זה לא ממש עוזר לנו. חיפוש באינטרנט אחר הגדרה הגיונית לכושר מניבה באופן מאכזב מעט מאוד. גרוע יותר, ה NSCA, המוציא לאור המכובד ביותר בפעילות גופנית, בסמכותם הרמה לא מנסים אפילו להגדיר.
-                        </div>
+                           <div style="margin-right: -27px;">
+                    <iframe src="//www.facebook.com/plugins/likebox.php?locale=he_IL&href=https%3A%2F%2Fwww.facebook.com%2FCFHIL&amp;width=340&amp;height=258&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false&amp;appId=181197471933726" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:340px; height:258px;" allowTransparency="true"></iframe>
+                            </div>
                     </div>
 
-                    <h2>אימוני עבר </h2>
+                   <!-- <h2>אימוני עבר </h2>
                     <hr class="style-one"/>
                     <div class="recentPosts">
                         <div class="recentPostSingle">
@@ -70,7 +67,7 @@
                         </div>
 
 
-                    </div>
+                    </div>-->
                 </div>
 
                 <div class="midspace_span"></div>

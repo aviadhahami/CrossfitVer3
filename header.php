@@ -26,8 +26,9 @@
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/css/responsivegridsystem.css">
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/css/xFitStyle.css">
 
-    <script src="<?php bloginfo('template_url'); ?>/js/jquery-1.7.2.min.js"></script>
-    <script src="<?php bloginfo('template_url'); ?>/js/myScripts.js"></script>
+    <script src="<?php bloginfo('template_url'); ?>/js/jquery-2.1.1.min.js"></script>
+    <script src="<?php bloginfo('template_url'); ?>/js/myScripts.js"></script> 
+   
     <script src="<?php bloginfo('template_url'); ?>/js/modernizr-2.5.3-min.js"></script>
     <script src="<?php bloginfo('template_url'); ?>/js/responsivegridsystem.js"></script>
     <?php wp_head(); ?>
@@ -36,19 +37,24 @@
 <body>
 
     <div class="container group">
-        <div class="header group span_4_of_4">
-             <div class="logo header_blocks">
-                        <a href="<?php echo get_option('home'); ?>">
+        <div class="header group span_3_of_3">
+            <div class="logo">
+                <a href="<?php echo get_option('home'); ?>">
                     <img src="<?php bloginfo('template_url'); ?>/img/logo_white.png" class="logopic" alt="logo" />
                         </a>
-             </div>
-            
-              
-                <div class="nav-bar header_blocks">
-                       <div class="main-nav">
+            </div>
+
+
+            <div class="nav-bar">
+                <div class="main-nav">
                     <? wp_nav_menu(array( 'container_class'=>'main-nav', 'container' => 'nav-bar')); ?>
-                        </div>
-                </div>      
+                </div>
+            </div>
+
+            <div class="search">
+                <img src="<?php bloginfo('template_url'); ?>/img/searchIcon.png" class="searchicon" />
+                <input placeholder="HI AMIR" class="searchbar"></input>
+            </div>
         </div>
 
 

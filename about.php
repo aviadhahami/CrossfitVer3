@@ -1,16 +1,15 @@
-<div class="containerScroller">
+﻿<div class="containerScroller">
     <div class="splash_container">
         <div class="top_container">
             <div class="span_3_of_3">
-                <img src="<?php bloginfo('template_url'); ?>/img/blogbg.jpg" class="blogHeader"/>
-
+                 <img style="background-image:url(<?php bloginfo('template_url'); ?>/img/headerPhoto3.png); top:0;" class="blogHeader" />
                 <h1 id="blogHeadTitle"> ABOUT US </h1>
             </div>
         </div>
 
 
         <div class="content">
-         <!--   <div class="blogger">
+            <!--   <div class="blogger">
                 <div class="col_side left_span"></div>
                 <div class="midspace_span"></div>
                 <div class="col_side right_span">
@@ -23,54 +22,46 @@
             </div>-->
             <div class="blogger">
                 <div class="col_side left_span">
-                    <div class="span_2_of_3 signup">
-                        <h2> מהו כושר גופני ומי בכושר? </h2>
+                  <div class="span_2_of_3 signup">
+                        <h2> עקבו אחרינו </h2>
                         <hr class="style-one"/>
-                        <img style="background-image:url(<?php bloginfo('template_url'); ?>/img/mpic2.jpg);"
-                             class="blockImg"/>
-
-                        <div class="generalText">
-                            <br>
-                          מגזין "אאוטסייד" (Outside magazin) הכתיר את מתחרה הטריאתלון מארק אלן כ-"Fittest man on earth". בואו נניח לרגע שזוכה שש הפעמים המפורסם בטריאתלון "איש הברזל" אכן מתאים להגדרה, אז איזה תואר ניתן לזוכה הדקאתלון סיימון פולמן אשר גם בעל סיבולת וכושר עמידה בלתי יאומן, אך ינצח את מר אלן בכל השוואה הכוללת חוזק, עוצמה, מהירות וקואורדינאציה?
-אולי ההגדרה לכושר לא כוללת חוזק, מהירות, עוצמה וקואורדינאציה למרות שזה נראה די מוזר. מילון ובסטר מגדיר כושר ולהיות בכושר כיכולת למסור גנים ולהיות בריא. זה לא ממש עוזר לנו. חיפוש באינטרנט אחר הגדרה הגיונית לכושר מניבה באופן מאכזב מעט מאוד. גרוע יותר, ה NSCA, המוציא לאור המכובד ביותר בפעילות גופנית, בסמכותם הרמה לא מנסים אפילו להגדיר.
-                        </div>
+                        <div style="margin-right: -27px;">
+                    <iframe src="//www.facebook.com/plugins/likebox.php?locale=he_IL&href=https%3A%2F%2Fwww.facebook.com%2FCFHIL&amp;width=340&amp;height=258&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false&amp;appId=181197471933726" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:340px; height:258px;" allowTransparency="true"></iframe>
+                            </div>
                     </div>
-
+ <!--  
                     <h2>אימוני עבר </h2>
-                    <hr class="style-one"/>
+                    <hr class="style-one" />
                     <div class="recentPosts">
                         <div class="recentPostSingle">
-                            <img style="background-image:url(<?php bloginfo('template_url'); ?>/img/mpic2.jpg);"
-                                 class="recentPostImg"/>
+                            <img style="background-image:url(<?php bloginfo('template_url'); ?>/img/mpic2.jpg);" class="recentPostImg" />
 
                             <div class="generalText">
                                 <span class="recentPostTextHeader">Nigga nigga nigga</span>
-                                <br> try one two three
+                                <br>try one two three
                             </div>
                         </div>
 
                         <div class="recentPostSingle">
-                            <img style="background-image:url(<?php bloginfo('template_url'); ?>/img/mpic2.jpg);"
-                                 class="recentPostImg"/>
+                            <img style="background-image:url(<?php bloginfo('template_url'); ?>/img/mpic2.jpg);" class="recentPostImg" />
 
                             <div class="generalText">
                                 <span class="recentPostTextHeader">Nigga nigga nigga</span>
-                                <br> try one two three
+                                <br>try one two three
                             </div>
                         </div>
 
                         <div class="recentPostSingle">
-                            <img style="background-image:url(<?php bloginfo('template_url'); ?>/img/mpic2.jpg);"
-                                 class="recentPostImg"/>
+                            <img style="background-image:url(<?php bloginfo('template_url'); ?>/img/mpic2.jpg);" class="recentPostImg" />
 
                             <div class="generalText">
                                 <span class="recentPostTextHeader">Nigga nigga nigga</span>
-                                <br> try one two thee
+                                <br>try one two thee
                             </div>
                         </div>
 
 
-                    </div>
+                    </div>-->
                 </div>
 
                 <div class="midspace_span"></div>
@@ -78,76 +69,21 @@
 
                 <div class="col_side right_span">
 
-                    <h1 id="contactTitle"> כושר גופני על-פי קרוספיט</h1>
-                    <hr class="style-one"/>
+                    <h1 id="contactTitle"> מה זה קרוספיט ומי אנחנו</h1>
+                    <hr class="style-one" />
 
-                    <div class="col_side span_2_of_2">
 
-                        <div class="generalText">
-
-                            עבור קרוספיט, הצגת תוכנית כושר מנצחת ללא הגדרה ברורה של מה שהתוכנית מעניקה, יהיה סוג של רמאות . החוסר בסמכות מנחה מחייבת שנגדיר בעצמינו.
-ההרהורים, הלימודים, הדיונים ולבסוף ההגדרה שלנו לכושר שיחק תפקיד מעצב בהצלחת קרוספיט. המפתחות להבנת השיטות וההישגים של קרוספיט מוטמעים באופן מושלם בראייתנו של כושר ומדע פעילות גופנית בסיסי.
-בטח לא תופתעו שתפיסתנו של מהו כושר היא תפיסה מנוגדת מתפיסתו של הציבור הרחב. ספקנותנו לגבי התואר "fittest man on earth" שניתן ע"י "אאוטסייד" לזוכה בטריאתלון הופכת להיות ברורה לאור הסטנדרטים של קרוספיט להערכת והגדרת כושר.
-קרוספיט משמשת בשלושה סטנדרטים או מודלים להערכת והנחיית כושר. באופן קולקטיבי, שלושת סטנדרטים אלו מגדירים כיצד קרוספיט רואה כושר:
- הראשון מבוסס על עשר מיומנויות פיזיות כלליות המוכרות לרוב ע"י פיזיולוגים לפעילות גופנית.
-הסטנדרט השני מבוסס על ביצוע משימות אתלטיות.
- השלישי מבוסס על מערכות האנרגיה אשר מעוררת כל פעולה אנושית.
-
-כל אחד מהמודלים קריטי להבנה של קרוספיט ולכל אחד שימוש ייחודי בהערכת הכושר או החוזק של אתלט. לפני ההסבר המפורט כיצד כל אחד מהמרכיבים עובד, יש לציין כי אנו לא מנסים להראות את לגיטימיות התוכנית שלנו דרך עקרונות מדעיים. אנו רק משתפים את השיטות של תוכנית אשר הלגיטימציה שלה כבר בוססה דרך עדויות של אתלטים, חיילים, שוטרים ועוד אנשים אשר חייהם או עבודתם תלויה בכושר.
-                        </div>
-
-                        <h2 style="margin-top: 30px;">הסטנדרטים של הקרוספיט</h2>
-                        <hr class="style-one"/>
-
-                        <dl class="list">
-                            <div style="width: 50%;float: right;">
-                                <dt>
-                                <div class="listText">
-                                    ישנם 10 מרכיבי כושר גופני מוכרים: סבולת לב-ריאה, סבולת שריר, כוח, כוח מתפרץ, גמישות, זריזות, מהירות, קואורדינציה, שיווי משקל ודיוק. על-פי תפיסת הכושר של קרוספיט, אתה בכושר ככל שאתה שולט בכל מרכיבי הכושר הנ"ל במקביל.
-שיפור בסבולת, חוזק וגמישות מושגים על ידי אימונים. באימון הכוונה לפעילות המשפרת ביצוע  דרך שינוי אורגני בעל מדידה בגוף. לעומת זאת, שיפורים בקואורדינציה, זריזות, יציבות ודיוק מושגים דרך תרגול. הכוונה בתרגול היא לפעילות המשפרת ביצוע דרך שינויים במערכת העצבים. עוצמה ומהירות מושגים ע"י אימון ותרגול יחד.
-                                </div>
-                                </dt>
-                            </div>
-
-                            <div style="width: 50%;float: right;">
-                                <dt>
-                                <div class="listText">
-                               היכולת להתמודד עם כל משימה בצורה טובה.מודל זה מציע שהכושר שלך יכול להימדד ע"י יכולתך לבצע כל הפעולות הללו היטב ביחס למתאמנים בשיטות אימון אחרות.
-כושר דורש יכולת ביצוע טובה בכל הפעולות, אפילו פעולות שאינן מוכרות, פעולות המשולבות בקומבינציות אינסופיות. תרגול מעודד את האתלט לא להשקיע ברעיונות קבועים של סטים, תקופות מנוחה, תרגילים, סדר התרגילים, וכדומה. הטבע מעניק לנו לעיתים קרובות אתגרים לא צפויים, התאמנו תוך גיוון ושינוי תמידי.
-                                </div>
-                                </dt>
-                            </div>
-                            
-                            <div style="width: 100%; clear: both;">
-                                <dt>
-                                <div class="listText">
-                                    ישנם שלושה מנגנונים מטבולייםהמעניקים אנרגיה לכל פעילות אנושית. אותם "מנועי חילוף חומרים" ידועים כמסלול ה-Phosphagen, מסלול ה-Glycolytic, ומסלול ה-Oxidative (חמצוני). 
-הראשון, ה-Phosphagen, שולט בפעילויות הצורכות הכי הרבה כוח, אלה שנמשכות בערך 10 שניות.
- השני, ה-Glycolytic, שולט בפעולות הכוח המתונות, אלה שנמשכות מספר דקות.
- והשלישי, ה-Oxidative, שולט בפעילויות הכוח הנמוכות-מאמצים ארובים.
-
-כושר כללי, הכושר שקרוספיט מקדמת ומפתחת, דורש יכולת ואימון בכל אחד משלושת המסלולים או המנועים. איזון האפקט של שלושת המסלולים קובע את ה"כיצד" וה"מדוע" של איך שאנחנו מפתחים יכולת ארובית בקרוספיט
-העדפה של אחד או שניים מהמנגנונים והתעלמות מהשאר ללא הכרה בהשפעה של אימון יתר במסלול החמצוני הם שתי המגרעות הנפוצות באימון כושר גופני. יותר על כך בהמשך.
-המוטיבציה לכל שלושת הסטנדרטים היא פשוט להבטיח את הכושר הרחב והכללי ביותר שאפשר. המודל הראשון שלנו מעריך את מאמצינו נגד טווח שלם של הסתגלויות פיזיות כלליות, בשני המיקוד הוא על רוחב ועומק הביצוע, השלישי הוא על זמן, עוצמה ומערכות אנרגיה. זה אמור להיות ברור שהכושר שקרוספיט תומכת בו ומפתחת אותו הוא בכוונה רחב, כללי וכוללני. התמחותנו היא לא להתמחות. קרב, הישרדות, ענפי ספורט שונים והחיים בכלל מתגמלים כושר כזה, ומדי פעם, מענישים את המתמחה.
-                                </div>
-                                </dt>
-                            </div>
-                        </dl>
-                        
-                         <h2 style="margin-top: 15px;">חולי, בריאות וכושר</h2>
-                        <hr class="style-one"/>
-                          <div class="generalText">
-ישנו פן נוסף בעל ערך עצום בהגדרת הכושר ע"פ קרוספיט. הבחנו כי כמעט כל ערך נמדד של בריאות יכול לנוע על רצף שבין חולי ,בריאות וכושר. למרות קושי המדידה, ניתן אף להוסיף בריאות נפשית לאבחנה זו. דיכאון בבירור ממותן ע"י דיאטה נכונה ופעילות, כלומר, כושר אותנטי.
-לדוגמא, לחץ דם של 160/95 הוא פתולוגי, 120/70 הוא נורמאלי או בריא, ו- 105/55 מתאים ללחץ דם של אתלט.
- 40% שומן הוא פתולוגי, 20% הוא נורמאלי או בריא ו 10% הוא בכושר. אנו מבחינים בסדר דומה בצפיפות העצם, טריגליצרידים, מסת שריר, גמישות, כולסטרול טוב, קצב לב במנוחה, ועשרות מידות נפוצות של בריאות.  בעלי סמכות רבות עושים הבחנה ברורה בין בריאות וכושר. לעיתים קרובות הם מצטטים מחקרים אשר מציינים כי בעל הכושר לאו דווקא מוגן בריאותית. מבט קרוב על הראיות התומכות חושף בקביעות כי הקבוצות הנחקרות בנויות בעיקר מספורטאי סבולת המסתמכים על דיאטה מסוכנת (הרבה פחמימות, מעט שומן, מעט חלבונים).
-כאשר נעשה נכון, כושר מעניק שולי הגנה נהדרים נגד הרס הזמן והמחלות. היכן שתמצאו אחרת בחנו את פרוטוקול הכושר, במיוחד את הדיאטה. כושר צריך להיות "סופר-שלומות/בריאות". חולי, שלומות וכושר הם מידות של אותה ישות. משטר כושר שלא תומך בבריאות הוא לא קרוספיט.
-                       </div>
-                                                 <h2 style="margin-top: 15px;">בסיס רעיוני</h2>
-                        <hr class="style-one"/>
-                          <div class="generalText">הכושר שלנו, של קרוספיט, מגיע מצפייה במתעמלים, גברים ונשים באופן שווה, מרימי משקולות אולימפיים ואצנים. פתחו יכולת ריצה של אצן 800 מטר ,מתעמל ומרים משקולות מתחילים ותהיו בכושר יותר מכל אצן עולמי, מתעמל או מרים משקולות.                       </div>
-
-                       
-                    </div>
+                    <div class="col_side spanralText">
+<div class="generalText">
+                        <? 
+query_posts('category_name=about');
+while (have_posts()) : the_post();
+the_title();
+the_content();
+echo("<hr class='style-one' />");
+endwhile;
+    ?> 
+                </div>     </div>
                 </div>
             </div>
         </div>
