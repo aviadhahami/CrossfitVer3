@@ -1,4 +1,39 @@
-﻿<div class="containerScroller">
+<!-- PHP PREP PREV POSTS SECTION -->
+
+<?
+$prevID = array();
+$prevTitle = array();
+$counter=0;
+query_posts('category_name=wod');
+  while (have_posts()):
+                the_post();                {
+                 switch ($counter) {
+                    case 0:{
+                        $prevTitle[0] = $post->post_title;
+                        $prevID[0] = $post->ID;  
+                        $counter++;   
+                        break;
+                    }
+                     case 1:{
+                         $prevTitle[1] = $post->post_title;
+                         $prevID[1] = $post->ID;  
+                         $counter++;    
+                         break;
+                     }
+                     case 2:{
+                        $prevTitle[2] = $post->post_title;
+                        $prevID[2] = $post->ID;  
+                        break;   
+                     }
+                 }
+                }
+endwhile;
+
+?>
+<!-- END OF PHP PREP SECTION -->
+
+
+<div class="containerScroller">
     <div class="splash_container">
         <div class="top_container">
             <div class="span_3_of_3">
@@ -29,39 +64,34 @@
                     <iframe src="//www.facebook.com/plugins/likebox.php?locale=he_IL&href=https%3A%2F%2Fwww.facebook.com%2FCFHIL&amp;width=340&amp;height=258&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false&amp;appId=181197471933726" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:340px; height:258px;" allowTransparency="true"></iframe>
                             </div>
                     </div>
- <!--  
-                    <h2>אימוני עבר </h2>
+
+                     <h2>אימוני עבר </h2>
                     <hr class="style-one" />
                     <div class="recentPosts">
-                        <div class="recentPostSingle">
-                            <img style="background-image:url(<?php bloginfo('template_url'); ?>/img/mpic2.jpg);" class="recentPostImg" />
 
-                            <div class="generalText">
-                                <span class="recentPostTextHeader">Nigga nigga nigga</span>
-                                <br>try one two three
-                            </div>
-                        </div>
+<?
 
-                        <div class="recentPostSingle">
-                            <img style="background-image:url(<?php bloginfo('template_url'); ?>/img/mpic2.jpg);" class="recentPostImg" />
+for ($i = 0; $i < 3; $i++) {
 
-                            <div class="generalText">
-                                <span class="recentPostTextHeader">Nigga nigga nigga</span>
-                                <br>try one two three
-                            </div>
-                        </div>
+    if ($prevTitle[$i] == '' || $prevTitle[$i] == " ") {
+        $i++;
+        break;
+    }
+?>
+
 
                         <div class="recentPostSingle">
                             <img style="background-image:url(<?php bloginfo('template_url'); ?>/img/mpic2.jpg);" class="recentPostImg" />
-
                             <div class="generalText">
-                                <span class="recentPostTextHeader">Nigga nigga nigga</span>
-                                <br>try one two thee
+                                <span class="recentPostTextHeader">
+                                <?php echo ("<a id='goBack' href='/crossfit/?page=blog&id=" .
+    $prevID[$i] . "'>" . $prevTitle[$i] . "</a>"); ?></span>
+                                <br>
+                                <? echo get_the_time('d-m-Y', $prevID[$i]); ?>
                             </div>
                         </div>
-
-
-                    </div>-->
+                        <? } //END OF FOR LOOP ?>
+                    </div>
                 </div>
 
                 <div class="midspace_span"></div>
