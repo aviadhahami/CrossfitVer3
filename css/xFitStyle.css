@@ -860,6 +860,10 @@ hr.style-one {
 
     font-weight: 200;
 
+}
+
+div.recentPostSingle div.generalText {
+
     max-width: 160px;
 
 }
