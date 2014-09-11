@@ -13,6 +13,11 @@
     
     
     <?php wp_enqueue_script( "jquery"); ?>
+    
+    <!--FOLLOWING LINE CHANGES THE BROWSER'S TAB ICON -->
+    <link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/img/BrowserLogo.ico">
+   <!-- <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.png" /> -->
+    
     <!-- <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/style.css">  -->
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/css/2cols.css">
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/css/3cols.css">
