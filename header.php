@@ -5,6 +5,13 @@
     <title>
         <?php wp_title( '|', true, 'right'); bloginfo( 'name'); ?>
     </title>
+    
+    
+    <!-- GOOGLE CONFIRMATION CODE ! DO NOT REMOVE OR EDIT ! -->
+    <meta name="google-site-verification" content="UCSK3Djc29H2b_B5NoDF7wwSIKinqdwEQDrzxq8sE3o" />
+    <!-- END OF GOOGLE STUFF -->
+    
+    
     <?php wp_enqueue_script( "jquery"); ?>
     <!-- <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/style.css">  -->
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/css/2cols.css">
@@ -31,7 +38,7 @@
    
     <script src="<?php bloginfo('template_url'); ?>/js/modernizr-2.5.3-min.js"></script>
     <script src="<?php bloginfo('template_url'); ?>/js/responsivegridsystem.js"></script>
-    <?php wp_head(); ?>
+    <?php wp_head(); ?> 
 </head>
 
 <body>
