@@ -1,6 +1,5 @@
 
 /** FONT ISNTALLATION**/
-@import url(http://fonts.googleapis.com/earlyaccess/opensanshebrew.css);
 
 @font-face {
 
@@ -9,12 +8,17 @@
     src: url(Dense-Regular.otf);
 }
 
+@font-face {
+
+    font-family: 'Open Sans Hebrew';
+   src: url('../fonts/OpenSansHebrew-Regular.otf');
+}
 body,
 
 html {
 
     overflow: hidden;
-  font-family: 'Open Sans Hebrew', ariel, "open sans";
+
     -webkit-font-smoothing: antialiased;
 
 }
@@ -137,7 +141,7 @@ html {
 
     font-size: 1em;
 
-    font-family: "Open Sans Hebrew", "open sans";
+    font-family: "open sans hebrew";
 
     color: white;
 
@@ -314,18 +318,14 @@ position: relative;*/
 
     position: relative;
 
-  /*  -webkit-animation: color_change 8s infinite alternate ease-in-out;
-*/
+    -webkit-animation: color_change 8s infinite alternate ease-in-out;
+
     width: 100%;
 
     height: auto;
 
     /*-webkit-animation-delay: 0.05s;*/
 
-}
-
-.img {
-     max-width: none;
 }
 
 @-webkit-keyframes color_change {
@@ -396,7 +396,7 @@ left: 0;*/
 
     text-rendering: optimizeLegibility;
 
-    font-family: "open sans hebrew";
+    font-family: '../fonts/OpenSansHebrew-light.otf';
 
     font-size: 12px;
 
@@ -436,12 +436,11 @@ h1#title {
 
     line-height: 54px;
 
-    font-family: "open sans hebrew";
+    font-family: '../fonts/OpenSansHebrew-light.otf';
 
     letter-spacing: 1;
 
 }
-
 
 h2#title {
 
@@ -597,7 +596,7 @@ h1#blogHeadTitle {
 
     font-size: 36px;
 
-    font-family: "Open Sans Hebrew", "open sans";
+    font-family: "Open Sans Hebrew";
 
     color: rgb(0, 0, 0);
 
@@ -615,7 +614,7 @@ h1#contactTitle {
 
     font-size: 36px;
 
-    font-family:"open sans hebrew"; font-weight:200; font-weight:200;
+    font-family: OpenSansHebrew-Light;
 
     color: rgb(0, 0, 0);
 
@@ -651,7 +650,7 @@ h1#blogTitle {
 
     font-size: 36px;
 
-    font-family:"open sans hebrew"; font-weight:200;
+    font-family: OpenSansHebrew-Light;
 
     color: rgb(0, 0, 0);
 
@@ -763,7 +762,7 @@ hr.style-one {
 
     text-align: right;
 
-    font-family: "Open Sans Hebrew", "open sans";
+    font-family: "Open Sans Hebrew";
 
 }
 
@@ -771,7 +770,7 @@ hr.style-one {
 
     font-size: 0.875em;
 
-    font-family: "Open Sans Hebrew", "open sans";
+    font-family: "Open Sans Hebrew";
 
     color: rgb(85, 85, 85);
 
@@ -855,13 +854,15 @@ hr.style-one {
 
     font-size: 0.875em;
 
-    font-family: "Open Sans Hebrew", "open sans";
+    font-family: "Open Sans Hebrew";
 
     color: rgb(85, 85, 85);
 
     line-height: 1.714;
 
     text-align: right;
+
+    font-weight: 200;
 
 }
 
@@ -877,7 +878,7 @@ div.recentPostSingle div.generalText {
 
     font-size: 1.125em;
 
-    font-family:"open sans hebrew"; font-weight:200;
+    font-family: '../fonts/OpenSansHebrew-light.otf';
 
     color: #555555;
 
@@ -937,7 +938,7 @@ button#viewPartButton {
 
     /*font-family: "Carmela";*/
 
-    font-family: "Open Sans Hebrew", "open sans";
+    font-family: "Open Sans Hebrew";
 
     float: right;
 
@@ -987,7 +988,7 @@ button#signButton {
 
     /*font-family: "Carmela";*/
 
-    font-family: "Open Sans Hebrew", "open sans";
+    font-family: "Open Sans Hebrew";
 
     color: rgb(255, 255, 255);
 
@@ -1015,7 +1016,7 @@ h2 {
 
     font-size: 1.125em;
 
-    font-family:"open sans hebrew"; font-weight:200;
+    font-family: OpenSansHebrew-Light;
 
     color: #555555;
 
@@ -1037,7 +1038,7 @@ label {
 
     ;
 
-    font-family: "Open Sans Hebrew", "open sans";
+    font-family: "Open Sans Hebrew";
 
     color: rgb(85, 85, 85);
 
@@ -1184,11 +1185,10 @@ label {
 /** CUSTOM LIST I <3 AVIAD **/
 
 div#wodList img {
-    width: 600px;
-    
-    height: 272px;
-    
-    background-position: center center;
+
+    height: auto;
+
+    background-position: center;
 
     background-repeat: no-repeat;
 
@@ -1198,11 +1198,19 @@ div#wodList img {
 
 div#wodList {
 
+    float: right;
+
+    font-size: 0.875em;
+
+    font-family: "Open Sans Hebrew";
+
     color: rgb(85, 85, 85);
 
     line-height: 1.714;
 
     text-align: right;
+
+    font-weight: 200;
 
 }
 
@@ -1211,9 +1219,6 @@ div#wodList wod {
     counter-reset: my-badass-counter;
 
     direction: rtl;
-    
-    font-size: 0.875em;
-    
 
 }
 
@@ -1228,24 +1233,17 @@ div#wodList wod woditem:before {
 div#wodList wod woditem {
 
     padding-left: 50px;
-    
-    font-size: 1em;
 
 }
 
 div#wodList wod woditem {
 
-    /*position: relative;*/
+    position: relative;
 
     padding: 4px 0 10px 0;
 
 }
 
-#postContainer {
-    direction: ltr;
-}
-
-/*
 div#wodList wod woditem:before {
 
     border-style: solid;
@@ -1281,29 +1279,8 @@ div#wodList wod woditem:before {
     line-height: 31px;
 
 }
-*/
-div#wodList wod woditem:before {
 
-border-style: solid;
-border-width: 2px;
-border-color: #bdbdbd;
-background-color: rgba(1, 29, 57, 0);
-width: 31px;
-height: 31px;
-display: inline-block;
-content: counter(my-badass-counter);
-counter-increment: my-badass-counter;
-position: absolute;
-right: 0;
-margin-bottom: 9.5%;
-margin-left: 13.5%;
-color: #bdbdbd;
-font-weight: bold;
-text-align: center;
-line-height: 31px;
-}
-
-/*div#wodList wod woditem {
+div#wodList wod woditem {
 
     color: rgb(85, 85, 85);
 
@@ -1311,19 +1288,6 @@ line-height: 31px;
 
     text-align: right;
 
-}*/
-
-div#wodList wod woditem {
-color: rgb(85, 85, 85);
-line-height: 2.4;
-text-align: right;
-margin-right: 63px;
-display: block;
-}
-
-div#wodList wod woditem {
-/* position: relative; */
-padding: 4px 0 10px 0;
 }
 
 /** TAGS **/
@@ -1334,7 +1298,7 @@ padding: 4px 0 10px 0;
 
     /** CHANGE TO VM/EM **/
 
-    font-family: "Open Sans Hebrew", "open sans";
+    font-family: "Open Sans Hebrew";
 
     color: rgb(85, 85, 85);
 
@@ -1355,10 +1319,6 @@ padding: 4px 0 10px 0;
     background-color: white;
 
     padding: 4px 5px 4px 5px;
-    
-    /** overflowing fix **/
-    display: inline-block;
-margin-bottom: 15px;
 
 }
 
@@ -1370,7 +1330,7 @@ margin-bottom: 15px;
 
     font-size: 1.125em;
 
-    font-family: "Open Sans Hebrew", "open sans";
+    font-family: "Open Sans Hebrew";
 
     color: rgb(85, 85, 85);
 
@@ -1420,7 +1380,7 @@ margin-bottom: 15px;
 
     font-size: 16px;
 
-    font-family: "Open Sans Hebrew", "open sans";
+    font-family: "Open Sans Hebrew";
 
     color: rgb(52, 178, 244);
 
@@ -1550,7 +1510,7 @@ button#comment {
 
     margin: 0;
 
-    font-family: "Open Sans Hebrew", "open sans";
+    font-family: "open sans hebrew";
 
 }
 
@@ -1586,7 +1546,7 @@ button#comment {
 
     margin: 0;
 
-    font-family: "Open Sans Hebrew", "open sans";
+    font-family: "open sans hebrew";
 
 }
 
@@ -1618,7 +1578,7 @@ button#comment {
 
     height: 130px;
 
-    font-family: "Open Sans Hebrew", "open sans";
+    font-family: "open sans hebrew";
 
 }
 
@@ -1852,7 +1812,7 @@ input::-webkit-input-placeholder {
 
     font-size: 1em;
 
-    font-family: "Open Sans Hebrew", "open sans";
+    font-family: "open sans hebrew";
 
 }
 
@@ -1866,7 +1826,7 @@ input:-moz-placeholder {
 
     font-size: 1em;
 
-    font-family: "Open Sans Hebrew", "open sans";
+    font-family: "open sans hebrew";
 
 }
 
@@ -1880,7 +1840,7 @@ input::-moz-placeholder {
 
     font-size: 1em;
 
-    font-family: "Open Sans Hebrew", "open sans";
+    font-family: "open sans hebrew";
 
 }
 
@@ -1892,7 +1852,7 @@ input:-ms-input-placeholder {
 
     font-size: 1em;
 
-    font-family: "Open Sans Hebrew", "open sans";
+    font-family: "open sans hebrew";
 
 }
 
@@ -1904,7 +1864,7 @@ textarea::-webkit-input-placeholder {
 
     font-size: 1em;
 
-    font-family: "Open Sans Hebrew", "open sans";
+    font-family: "open sans hebrew";
 
 }
 
@@ -1918,7 +1878,7 @@ textarea:-moz-placeholder {
 
     font-size: 1em;
 
-    font-family: "Open Sans Hebrew", "open sans";
+    font-family: "open sans hebrew";
 
 }
 
@@ -1932,7 +1892,7 @@ textarea::-moz-placeholder {
 
     font-size: 1em;
 
-    font-family: "Open Sans Hebrew", "open sans";
+    font-family: "open sans hebrew";
 
 }
 
@@ -1944,7 +1904,7 @@ textarea:-ms-input-placeholder {
 
     font-size: 1em;
 
-    font-family: "Open Sans Hebrew", "open sans";
+    font-family: "open sans hebrew";
 
 }
 
@@ -2038,7 +1998,7 @@ p.blogsubtext {
 
     margin-top: 0.5em;
 
-    font-family: "Open Sans Hebrew", "open sans";
+    font-family: "Open Sans Hebrew";
 
     text-align: center;
 
