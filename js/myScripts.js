@@ -1,5 +1,6 @@
 "use strict";
 $(document).ready(function() {
+    $('div#wodList img').css("max-width", "1000px");
     console.log("JQ LOADED");
 
 
@@ -73,6 +74,13 @@ $(document).ready(function() {
         });
 */
         }, 7000);
+        
+        $('.img').removeAttr('max-width');
+         $("#carImg").animate( {width:'+=300px'}, {duration: 6300});
+              
+        
+        
+        
     }
 
     //submit button listener
@@ -361,9 +369,14 @@ $(document).ready(function() {
     var pageVal = $.urlParam('page');
     if (pageVal === "blog") {
         //edit the image size in the blog
-        var originWidth = $("div#wodList img").width();
-        $("div#wodList img").css("max-width", originWidth / 2);
-
+        //TODO: ORI FIX
+/*        var originWidth = $("div#wodList img").width();
+        $("div#wodList img").css("max-width", originWidth / 2);*/
+        
+        var imgSrc = $("div#wodList img").attr('src');
+        $("div#wodList img").removeAttr("src title alt");
+        $("div#wodList img").css('background-image', 'url(' + imgSrc + ')');
+           
 
         //insert the daily sched
         var d = new Date();
