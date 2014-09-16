@@ -6,9 +6,14 @@
     font-family: Dense;
 
     src: url(Dense-Regular.otf);
-
 }
 
+@font-face {
+
+    font-family: 'Open Sans Hebrew';
+   src: url(OpenSansHebrew-Regular.otf);
+
+}
 body,
 
 html {
