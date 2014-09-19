@@ -11,7 +11,7 @@ alert(hope);
                     CROSSFIT HERZELIYA
                     </h1>
                <!-- <h2 id="title">Number One Crossfit Brotherhood</h2>-->
-                <button id="overlay" class="buttontext" onclick='window.open("http://aviadclicktale.co.nf/crossfit/?page=blog","_self");'>קרא עוד</button>
+                <button id="overlay" class="buttontext" onclick='window.open("http:/crossfitherzliya.com/?page=blog","_self");'>קרא עוד</button>
                     </div>
             <br>
             <br>

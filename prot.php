@@ -87,7 +87,7 @@ for ($i = 0; $i < 3; $i++) {
                             <img style="background-image:url(<?php bloginfo('template_url'); ?>/img/mpic2.jpg);" class="recentPostImg" />
                             <div class="generalText">
                                 <span class="recentPostTextHeader">
-                                <?php echo ("<a id='goBack' href='/crossfit/?page=blog&id=" .
+                                <?php echo ("<a id='goBack' href='/?page=blog&id=" .
     $prevID[$i] . "'>" . $prevTitle[$i] . "</a>"); ?></span>
                                 <br>
                                 <? echo get_the_time('d-m-Y', $prevID[$i]); ?>

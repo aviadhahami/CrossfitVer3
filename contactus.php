@@ -83,7 +83,7 @@
 
                     <div class="col_side right_span">
 
-                        <h1 id="contactTitle">הרשמה לאימונים </h1>
+                        <h1 id="contactTitle">צור קשר</h1>
                         <hr class="style-one" />
 
 
