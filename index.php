@@ -11,7 +11,9 @@
             require_once "about.php";
         } else if ($term == "whatIsFitness") {
             require_once "whatIsFitness.php";
-        } else if ($term == "prot") {
+        }else if($term == "sched"){
+             require_once "sched.php";
+        }else if ($term == "prot") {
             require_once "prot.php";
         }else if ($term == "fitness") {
             require_once "fitness.php";
