@@ -1,6 +1,8 @@
 "use strict";
 $(document).ready(function() {
-    $("#datepicker").datepicker({ dateFormat: 'dd/mm/y' });
+    $("#datepicker").datepicker({
+        dateFormat: 'dd/mm/y'
+    });
 
     $("#sendButton").on("click", function() {
         $("#output").text(" ");
@@ -20,20 +22,28 @@ $(document).ready(function() {
         //END OF DATE VALIDATION
 
         var dateOutput = dateInput.replace(/\//g, '');
-        $("#output").text("Showing results for : " + dateInput);
         var url = "../poll/pollData/" + dateOutput + "-Wod.xml";
+
+        //Calculate exec time
+        var a = performance.now();
+
+        $("#output").append("<span id='loading'>Loading....</span>");
         $.ajax({
             type: "GET",
             url: url,
             datatype: "xml",
             success: function(xml) {
-                console.log(xml)
+                var b = performance.now();
+                $("#loading").remove();
+                $("#output").html("<span>The search took " + ((b-a) & 0xFFFF) + " ms <br/> Showing results for : " + dateInput +"</span>");
+                console.log(xml);
             },
             error: function(err) {
+                $("#loading").remove();
+                $("#output").html("<span>Some error occoured</span> <br />Error : " + err.statusText);
                 console.error('ERROR');
                 console.log(err);
             }
         });
-
     });
 });
