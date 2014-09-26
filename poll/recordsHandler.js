@@ -1,5 +1,7 @@
 "use strict";
 $(document).ready(function() {
+
+
     $("#datepicker").datepicker({
         dateFormat: 'dd/mm/y'
     });
@@ -8,6 +10,8 @@ $(document).ready(function() {
         $("#output").html("");
         $("#content").html("");
         var dateInput = $("#datepicker").val();
+
+
 
 
         //Check date validation

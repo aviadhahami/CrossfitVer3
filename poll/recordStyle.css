@@ -2,12 +2,31 @@ body {
     text-align: center;
     background-color: grey;
     margin: 0 auto;
+    width: 100%;
+}
+h1 {
+    width: 100%;
+    font-size: 5em;
+}
+input,
+select,
+textarea {
+    text-align: center;
+    font-size: 3em;
+}
+button {
+    text-align: center;
+    font-size: 5em;
 }
 #content {
     direction: rtl;
     width: 30%;
     min-width: 30%;
     margin: 0 auto;
+    font-size: 2em;
+}
+#output {
+    font-size: 1.2em;
 }
 .title {
     text-decoration: underline;
@@ -17,8 +36,17 @@ body {
     text-decoration: underline;
 }
 @media print {
+    h1 {
+        font-size: 20px;
+    }
+    #output {
+        font-size: 12px;
+    }
     #datepicker {
         display: none;
+    }
+    #content {
+        font-size: 12px;
     }
     button {
         display: none;
