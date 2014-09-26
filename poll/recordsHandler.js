@@ -213,7 +213,7 @@ $(document).ready(function() {
 
             //Outputing data
 
-            $("#output").append("<span class='subtitle'>Total participants today is: " + totalParts + "</span><br />");
+            $("#output").append("<span class='subtitle'>Total participants today : " + totalParts + "</span><br />");
         }
     });
 });
