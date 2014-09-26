@@ -5,7 +5,8 @@ $(document).ready(function() {
     });
 
     $("#sendButton").on("click", function() {
-        $("#output").text(" ");
+        $("#output").html("");
+        $("#content").html("");
         var dateInput = $("#datepicker").val();
 
 
@@ -33,11 +34,12 @@ $(document).ready(function() {
             url: url,
             datatype: "xml",
             success: function(xml) {
-                var b = performance.now();
                 $("#loading").remove();
-                $("#output").html("<span>The search took " + ((b-a) & 0xFF) + " ms <br/> Showing results for : " + dateInput +"</span>");
+                $("#output").html("Showing results for : " + dateInput + "</span><br /><br />");
                 console.log(xml);
                 sorter(xml);
+                var b = performance.now();
+                $("#output").append("<span>The search took " + ((b - a) & 0xFF) + " ms <br/>");
             },
             error: function(err) {
                 $("#loading").remove();
@@ -46,8 +48,168 @@ $(document).ready(function() {
                 console.log(err);
             }
         });
-        function sorter(xml){
-            alert(xml);
+
+        function sorter(xml) {
+            var count = 0;
+            var totalParts = 0;
+            var localParts = 0;
+            //Wod1 case
+            $(xml).find('participant').each(function() {
+                if ($(this).find('wod').text() == "wod1") {
+                    totalParts++;
+                    localParts++;
+                    if (count == 0) {
+                        count = 1;
+                        $("#content").append("<hr /><span class='title'>" + $(this).find('rawData').text() + "</span>");
+                    }
+                    $("#content").append("<li>" + $(this).find('name').text() + "</li>");
+
+                }
+            });
+            if (count > 0) {
+                $("#content").append("<span class='subTitle'>this wod's participants: " + localParts + "</span>");
+            }
+            localParts = 0;
+            count = 0;
+
+            //*********************************//
+
+            //Open1 case
+            $(xml).find('participant').each(function() {
+                if ($(this).find('wod').text() == "open1") {
+                    totalParts++;
+                    localParts++;
+                    if (count == 0) {
+                        count = 1;
+                        $("#content").append("<hr /><span class='title'>" + $(this).find('rawData').text() + "</span>");
+                    }
+                    $("#content").append("<li>" + $(this).find('name').text() + "</li>");
+
+                }
+            });
+            if (count > 0) {
+                $("#content").append("<span class='subTitle'>this wod's participants: " + localParts + "</span>");
+            }
+            localParts = 0;
+            count = 0;
+
+            //*********************************//
+            //*********** END OF CASE ***********//
+
+            //wod2 case
+            $(xml).find('participant').each(function() {
+                if ($(this).find('wod').text() == "wod2") {
+                    totalParts++;
+                    localParts++;
+                    if (count == 0) {
+                        count = 1;
+                        $("#content").append("<hr /><span class='title'>" + $(this).find('rawData').text() + "</span>");
+                    }
+                    $("#content").append("<li>" + $(this).find('name').text() + "</li>");
+
+                }
+            });
+            if (count > 0) {
+                $("#content").append("<span class='subTitle'>this wod's participants: " + localParts + "</span>");
+            }
+            localParts = 0;
+            count = 0;
+
+            //*********************************//
+            //*********** END OF CASE ***********//
+
+            //open2 case
+            $(xml).find('participant').each(function() {
+                if ($(this).find('wod').text() == "open2") {
+                    totalParts++;
+                    localParts++;
+                    if (count == 0) {
+                        count = 1;
+                        $("#content").append("<hr /><span class='title'>" + $(this).find('rawData').text() + "</span>");
+                    }
+                    $("#content").append("<li>" + $(this).find('name').text() + "</li>");
+
+                }
+            });
+            if (count > 0) {
+                $("#content").append("<span class='subTitle'>this wod's participants: " + localParts + "</span>");
+            }
+            localParts = 0;
+            count = 0;
+
+            //*********************************//
+            //*********** END OF CASE ***********//
+
+            //wod3 case
+            $(xml).find('participant').each(function() {
+                if ($(this).find('wod').text() == "wod3") {
+                    totalParts++;
+                    localParts++;
+                    if (count == 0) {
+                        count = 1;
+                        $("#content").append("<hr /><span class='title'>" + $(this).find('rawData').text() + "</span>");
+                    }
+                    $("#content").append("<li>" + $(this).find('name').text() + "</li>");
+
+                }
+            });
+            if (count > 0) {
+                $("#content").append("<span class='subTitle'>this wod's participants: " + localParts + "</span>");
+            }
+            localParts = 0;
+            count = 0;
+
+            //*********************************//
+            //*********** END OF CASE ***********//
+
+            //wod4 case
+            $(xml).find('participant').each(function() {
+                if ($(this).find('wod').text() == "wod4") {
+                    totalParts++;
+                    localParts++;
+                    if (count == 0) {
+                        count = 1;
+                        $("#content").append("<hr /><span class='title'>" + $(this).find('rawData').text() + "</span>");
+                    }
+                    $("#content").append("<li>" + $(this).find('name').text() + "</li>");
+
+                }
+            });
+            if (count > 0) {
+                $("#content").append("<span class='subTitle'>this wod's participants: " + localParts + "</span>");
+            }
+            localParts = 0;
+            count = 0;
+
+            //*********************************//
+            //*********** END OF CASE ***********//
+
+            //wod5 case
+            $(xml).find('participant').each(function() {
+                if ($(this).find('wod').text() == "wod5") {
+                    totalParts++;
+                    localParts++;
+                    if (count == 0) {
+                        count = 1;
+                        $("#content").append("<hr /><span class='title'>" + $(this).find('rawData').text() + "</span>");
+                    }
+                    $("#content").append("<li>" + $(this).find('name').text() + "</li>");
+
+                }
+            });
+            if (count > 0) {
+                $("#content").append("<span class='subTitle'>this wod's participants: " + localParts + "</span>");
+            }
+            localParts = 0;
+            count = 0;
+
+            //*********************************//
+            //*********** END OF CASE ***********//
+
+
+            //Outputing data
+
+            $("#output").append("<span class='subtitle'>Total participants today is: " + totalParts + "</span><br />");
         }
     });
 });

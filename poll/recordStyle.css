@@ -1,6 +1,20 @@
 body {
     text-align: center;
     background-color: grey;
+    margin: 0 auto;
+}
+#content {
+    direction: rtl;
+    width: 30%;
+    min-width: 30%;
+    margin: 0 auto;
+}
+.title {
+    text-decoration: underline;
+    font-weight: bold;
+}
+.subTitle {
+    text-decoration: underline;
 }
 @media print {
     #datepicker {
