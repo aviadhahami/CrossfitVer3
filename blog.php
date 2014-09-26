@@ -37,6 +37,7 @@ switch ($flag) {
                                     //we've found the post
                                     
                                     $blogContent = apply_filters( 'the_content', $post->post_content );
+                                    
                                     $blogTitle = $post->post_title;
                                     $tags = wp_get_post_tags($post->ID);
                                     foreach ($tags as $tag) {

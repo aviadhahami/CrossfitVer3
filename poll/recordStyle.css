@@ -1,0 +1,15 @@
+body {
+    text-align: center;
+    background-color: grey;
+}
+@media print {
+    #datepicker {
+        display: none;
+    }
+    button {
+        display: none;
+    }
+    body>p {
+        display: none;
+    }
+}
