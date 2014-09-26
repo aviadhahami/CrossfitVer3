@@ -35,8 +35,9 @@ $(document).ready(function() {
             success: function(xml) {
                 var b = performance.now();
                 $("#loading").remove();
-                $("#output").html("<span>The search took " + ((b-a) & 0xFFFF) + " ms <br/> Showing results for : " + dateInput +"</span>");
+                $("#output").html("<span>The search took " + ((b-a) & 0xFF) + " ms <br/> Showing results for : " + dateInput +"</span>");
                 console.log(xml);
+                sorter(xml);
             },
             error: function(err) {
                 $("#loading").remove();
@@ -45,5 +46,8 @@ $(document).ready(function() {
                 console.log(err);
             }
         });
+        function sorter(xml){
+            alert(xml);
+        }
     });
 });
