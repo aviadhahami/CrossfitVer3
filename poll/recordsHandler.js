@@ -39,11 +39,11 @@ $(document).ready(function() {
             datatype: "xml",
             success: function(xml) {
                 $("#loading").remove();
-                $("#output").html("Showing results for : " + dateInput + "</span><br /><br />");
+                $("#output").html("Showing results for : " + dateInput + "</span><br />");
                 console.log(xml);
                 sorter(xml);
                 var b = performance.now();
-                $("#output").append("<span>The search took " + ((b - a) & 0xFF) + " ms <br/>");
+                $("#output").append("<span>The search took " + ((b - a) & 0xFF) + " ms <br />");
             },
             error: function(err) {
                 $("#loading").remove();
