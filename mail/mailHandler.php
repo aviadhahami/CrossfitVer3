@@ -1,8 +1,8 @@
 <?php
 if ($_POST) {
-    //$to_email = "gali@crossfitherzliya.com";
+    $to_email = "gali@crossfitherzliya.com";
     
-    $to_email = "aviadhahami@gmail.com";
+//$to_email = "aviadhahami@gmail.com";
     //Sanitize input data using PHP filter_var().
     $user_name = filter_var($_POST["userName"], FILTER_SANITIZE_STRING);
     $user_email = filter_var($_POST["userMail"], FILTER_SANITIZE_EMAIL);
