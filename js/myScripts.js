@@ -159,8 +159,9 @@ $(document).ready(function() {
     function submitForm() {
         var contactName = $("#contactName").val();
         var contactMail = $("#contactEmail").val();
+        var contactMail = $("#contactPhone").val();
         var contactText = $("#contactTextarea").val();
-        if (contactName.length < 5 || contactName == "" || contactName == " ") {
+        if (contactName.length < 2 || contactName == "" || contactName == " ") {
             $("#contactName").css("border-color", "red");
             $("#nameLabel").append("<p id='error'>Please enter a valid name</p>");
             $("#nameLabel > p").delay(5000).fadeOut(500);
